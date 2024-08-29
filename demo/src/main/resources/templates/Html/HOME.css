@@ -1,0 +1,287 @@
+#CaixaLogin {
+    width: 823PX;
+    background-color: white;
+    height: 1030px;
+    margin-left: 1025px;
+    margin-top: -1042px;
+    display: flexbox;
+}
+
+h1 {
+    color: black;
+    font-size: 50px;
+    margin-left: 150px;
+}
+
+.login {
+    color:  black;
+    margin-left: 250px;
+
+}
+
+.login_input {
+    width: 500px;
+    height: 60px;
+    border-radius: 15px;
+    font-size: 20px;
+  
+}
+
+.entrar {
+    width: 400px;
+    margin-left: 300px;
+    margin-top: 90px;
+    height: 70px;
+    color: white;
+    background-color: #1E3A8A;
+    font-size: 30px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+.entrar:hover{
+    opacity: 0.9;
+
+}
+
+h6 {
+    color: black;
+    font-size: 50px;
+    margin-left: 50px;
+    margin-top: 200px;
+}
+
+h5 {
+    color: black;
+    font-size: 35px;
+    margin-left: 50px;
+    margin-top: -40px;
+}
+
+.container {
+    position: relative;
+    display: inline-block;
+}
+
+.nuvem {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    text-align: center;
+   
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.nuvem::before {
+    content: '';
+    position: absolute;
+    bottom: -15px; /* Ajusta a posição da "cauda" da nuvem */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid rgba(255, 255, 255, 0.8);
+}
+
+.container:hover .nuvem {
+    display: block;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -10px;
+    padding: 5px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    user-select: none;
+    transition: 0.6s ease;
+    border-radius: 5px;
+}
+.prev,.next:hover{
+    color: #1E3A8A;
+
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+#Visitante{
+    background-color: grey;
+    margin-top: -140px;
+    
+}
+
+#b1{
+    width: 300px;
+    margin-left: 380px;
+    margin-top: 60px;
+    height: 60px;
+    color: white;
+    background-color: #1E3A8A;
+    font-size: 25px;
+    border-radius: 20px
+  
+}
+
+#b1:hover{
+    opacity: 0.9;
+
+}
+header{
+    background-color:whitesmoke;
+    height: 90PX;
+    margin-top: -34PX;
+    width: 100%;
+    background-image: url(Imagens/png-clipart-robotics-logo-robot-electronics-logo.png);
+ background-repeat: no-repeat;
+    
+
+
+ 
+ 
+ 
+    
+    
+}
+footer{
+
+    background-color: #1E3A8A;
+    height: 70PX;
+    margin-top: 0PX;
+    width: 2100px;
+
+}
+
+
+
+
+
+
+    #eyeIcon {
+        cursor: pointer; /* Mostra cursor de ponteiro ao passar sobre o ícone */
+        margin-left: 5px; /* Adiciona margem à esquerda para espaçamento */
+    }
+    
+    /* Estilo para o botão (span) */
+    #togglePassword {
+        display: inline-flex; /* Garante que o ícone fique ao lado do campo de entrada */
+        align-items: center;
+        padding: 2px;
+        margin-left: -50px;  
+        font-size: 25px; /*
+         Adiciona um pouco de padding para espaçamento */
+         color: black;
+    }
+
+    .carousel-image {
+        width: 100%; /* Ajuste conforme necessário */
+        height: auto; /* Mantém a proporção da imagem */
+        border-radius: 8px; /* Adiciona bordas arredondadas (opcional) */
+    }
+    h1{
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        
+    }
+
+    
+    
+    #pixi-container {
+        width: 800px;
+        height: 1000px; 
+    
+        margin-left: 1200px;
+        margin-top: -1000px;
+    }
+    .social-buttons {
+        display: flex;
+        flex-direction: row; /* Exibe os botões em linha */
+        gap: 50px; /* Espaço entre os botões */
+        margin-top: -550px;
+        justify-content: center;
+        margin-left: 1000px; /* Centraliza os botões horizontalmente */
+    }
+    
+    .social-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 20px;
+        color: #ffffff;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        width: 150px; /* Ajusta a largura para acomodar o texto e ícone */
+        box-sizing: border-box;
+         /* Garante que o padding e border sejam incluídos na largura total */
+    }
+    
+    /* Estilos específicos para cada botão social */
+    .google {
+        background-color: #db4437;
+    }
+    
+    .facebook {
+        background-color: #3b5998;
+    }
+    
+    .linkedin {
+        background-color: #0077b5;
+    }
+    
+    .social-button:hover {
+        opacity: 0.9;
+    }
+    
+    .social-button i {
+        margin-right: 10px; /* Espaço entre o ícone e o texto */
+    }
+    
+    .entrars{
+        
+            width: 400px;
+            margin-left: 300px;
+            margin-top: -20px;
+            height: 70px;
+            color: white;
+            background-color: #1E3A8A;
+            font-size: 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            
+            
+        }
+
+
+        .entrars:hover{
+            opacity: 0.9;
+        
+        }
+
+
+       
+
+    
+
+  
+    
+    

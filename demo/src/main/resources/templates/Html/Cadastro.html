@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+  
+    <script defer src=" Home.js"></script> <!-- Inclusão do script JavaScript -->
+</head>
+<body>
+    <div id="CaixaLogin" style="display: none;">
+        <!-- Conteúdo do formulário de login -->
+        <button onclick="showRegisterForm()">Criar uma conta</button>
+    </div>
+    <div id="CaixaCadastro" style="max-width: 400px; margin: auto; padding: 20px;">
+        <h1>Cadastro</h1>
+        <div class="login">
+            <label for="registerUser">Usuário:</label>
+            <input id="registerUser" type="text" placeholder="Digite seu usuário" required>
+        </div>
+        <div class="login">
+            <label for="registerPassword">Senha:</label>
+            <input id="registerPassword" type="password" placeholder="Digite sua senha" required>
+        </div>
+        <button id="registerButton">Cadastrar</button>
+        <p id="message" style="color: green; font-weight: bold; margin-top: 10px;"></p>
+    </div>
+</body>
+</html>
