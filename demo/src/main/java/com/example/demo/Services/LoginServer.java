@@ -1,34 +1,27 @@
-package com.example.demo.Services;
+package com.Native.coder.Servico;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.Native.coder.Modelo.Login;
+import com.Native.coder.Repository.userRepository;
 
-
-import java.util.Scanner;
-import com.example.demo.modelo.Login;
-
+@Service
 public class LoginServer {
 
-    private Login login;
+    @Autowired
+    public userRepository loginRepository;
 
-    // Construtor para inicializar o serviço com uma instância de Login
-    public LoginServer(Login login) {
-        this.login = login;
+    public boolean validarLogin(String user, String senha) {
+        try {
+            Login login = loginRepository.findByUsers(user);
+            if (login != null) {
+                return senha.equals(login.getSenha());
+            }
+            return false;
+        } catch (Exception e) {
+            System.out.println("Erro: no metodo validar login  " + e.getMessage());
+            return false;
+        }
     }
 
-    public void ObterLogin() {
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("Digite seu usuário: ");
-        String userString = entrada.nextLine();
-        
-        // Define o nome de usuário na instância de Login
-        login.setUsers(userString);
-
-        System.out.println("Digite sua senha: ");
-        String password = entrada.nextLine();
-
-        // Define a senha na instância de Login
-        login.setSenha(password);
-
-        entrada.close();  // Fechar o Scanner para evitar vazamento de recursos
-    }
 }
-

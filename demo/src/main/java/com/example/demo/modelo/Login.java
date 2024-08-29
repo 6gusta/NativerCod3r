@@ -1,16 +1,29 @@
-package com.example.demo.modelo;
+package com.Native.coder.Modelo;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Login {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String users;
     private String senha;
-    
-    public Login(String users, String senha) {
-        this.users = users;
-        this.senha = senha;
+
+    // Getters e Setters
+    public Long getId() {
+        return id;
     }
 
-  
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getUsers() {
         return users;
     }
@@ -25,41 +38,5 @@ public class Login {
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    @Override
-    public String toString() {
-        return "Login [users=" + users + ", senha=" + senha + "]";
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((users == null) ? 0 : users.hashCode());
-        result = prime * result + ((senha == null) ? 0 : senha.hashCode());
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Login other = (Login) obj;
-        if (users == null) {
-            if (other.users != null)
-                return false;
-        } else if (!users.equals(other.users))
-            return false;
-        if (senha == null) {
-            if (other.senha != null)
-                return false;
-        } else if (!senha.equals(other.senha))
-            return false;
-        return true;
     }
 }

@@ -1,44 +1,56 @@
-package com.example.demo;
+package com.Native.coder.Teste;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.Native.coder.Modelo.Login;
+import com.Native.coder.Repository.userRepository;
+import com.Native.coder.Servico.LoginServer;
 
-import java.io.ByteArrayInputStream;
-
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
 
-import com.example.demo.Services.LoginServer;
-import com.example.demo.modelo.Login;
+public class TesteLogin {
 
-@SpringBootTest
-class DemoApplicationTests {
+    @Test
+    public void testValidarLoginSuccess() {
+       
+        userRepository mockRepository = Mockito.mock(userRepository.class);
 
-	@Test
-    public void testSetAndGetUsers() {
-        // Cria uma nova instância de Login
-        Login login = new Login("", "");
+  
+        LoginServer loginServer = new LoginServer();
+        loginServer.loginRepository = mockRepository; 
 
-		login.setUsers("testUser");
+  
+        Login login = new Login();
+        login.setUsers("user");
+        login.setSenha("password");
+        when(mockRepository.findByUsers("user")).thenReturn(login);
 
-        // Verifica se o nome de usuário foi armazenado corretamente
-        assertEquals("testUser", login.getUsers());
+    
+        boolean isValid = loginServer.validarLogin("user", "password");
 
-	}
+  
+        assertEquals(true, isValid);
+    }
 
-	@Test
+    @Test
+    public void testValidarLoginFailure() {
 
-	public void testSetAndGetSnha(){
+        userRepository mockRepository = Mockito.mock(userRepository.class);
 
-		Login login = new Login("", "");
+  
+        LoginServer loginServer = new LoginServer();
+        loginServer.loginRepository = mockRepository;
 
-		login.setUsers("tessenha");
-
-        // Verifica se o nome de usuário foi armazenado corretamente
-        assertEquals("testsenha", login.getUsers());
-		
-	}
+        when(mockRepository.findByUsers("user")).thenReturn(null);
 
 
+        boolean isValid = loginServer.validarLogin("user", "password");
 
+ 
+        assertEquals(false, isValid);
+    }
+
+  
 }
