@@ -24,4 +24,21 @@ public class LoginServer {
         }
     }
 
+
+    public Login criarLogin(String user, String senha, String email) {
+        if (loginRepository.findByEmail(email) != null) { 
+            throw new RuntimeException("Você já possui uma conta. Volte para a página inicial e faça seu login.");
+        }
+        try {
+            Login login = new Login();
+            login.setUsers(user);
+            login.setSenha(senha);
+            login.setEmail(email);
+            return loginRepository.save(login);
+        } catch (Exception e) {
+            System.out.println("Erro: no método criar " + e.getMessage());
+            return null; 
+        }
+    }
+    
 }

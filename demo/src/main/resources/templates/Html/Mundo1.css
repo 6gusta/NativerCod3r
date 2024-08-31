@@ -2,9 +2,10 @@
     border: 5px solid white ;
     width: 500px;
     height: 1550px;
-    background-color: #87cefa;
+    background-color: #0077b5;
     color: white;
-    font-size: 30px;
+    font-size: 28px;
+   
    
 }
 li{
@@ -12,6 +13,9 @@ li{
     border: 3px solid white;
     height: 60px;
     margin-top: 30px;
+    
+  
+   
 
 }
 header{
@@ -29,7 +33,7 @@ header{
 }
 #painel{
     border: 1px solid rgba(0, 0, 0, 0.226);
-    height: 900px;
+    height: 1100px;
     margin-left: 555px;
     margin-top: -1580px;
     position: fixed;
@@ -39,7 +43,7 @@ header{
 }
 body{
   
-    background-color: #87cefa;
+    background-color: #0077b5;;
 }
 #robo{
     background-image: url(Imagens/WhatsApp\ Image\ 2024-08-12\ at\ 07.34.54.jpeg);
@@ -142,17 +146,38 @@ h2{
 #print-translation{
     width: 200px;
     height: 30px;
+    margin-left: 20px;
+    margin-top: 15px;
+    font-size: 15px;
 }
 #print-code{
 
     width: 400px;
     height: 190px;
     margin-left: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 20px;
   
 
 
 }
 #buttton{
-    margin-top: 250px;
+    margin-top: 200px;
     margin-left: -900px;
+    background-color: green;
+    color: white;
+    height: 65px;
+    font-size: 20px;
+}
+p{
+    font-size: 25px;
+    padding-left: 35px;
+}
+.message{
+    font-size: 18px;
+
+}
+h1{
+    margin-left: 10px;
 }

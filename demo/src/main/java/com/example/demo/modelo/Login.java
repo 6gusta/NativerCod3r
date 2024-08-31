@@ -14,6 +14,7 @@ public class Login {
 
     private String users;
     private String senha;
+    private String email; 
 
     // Getters e Setters
     public Long getId() {
@@ -38,5 +39,13 @@ public class Login {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getEmail() { 
+        return email;
+    }
+
+    public void setEmail(String email) { 
+        this.email = email;
     }
 }

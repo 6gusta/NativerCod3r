@@ -1,0 +1,88 @@
+#registerButton {
+    background-color: #1E3A8A;
+    color: white;
+    width: 100%;
+    height: 45px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 40px;
+ 
+}
+#registerButton:hover {
+    background-color: #163A73;
+}
+
+#CaixaCadastro {
+    background-color: #1099bb;
+
+    width: 400px;
+    height: 400px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    text-align: center;
+    margin-left: 35%;    
+   margin-top: -800px;
+}
+
+
+label {
+    font-size: 18px;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+#registerUser,
+#registerPassword,#registeremail {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+h1 {
+    color: #1E3A8A;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+header{
+    background-color:whitesmoke ;
+    height: 90PX;
+    margin-top: -34PX;
+    width: 100%;
+    background-image: url(Imagens/png-clipart-robotics-logo-robot-electronics-logo.png);
+    background-repeat: no-repeat;
+    
+ 
+ 
+    
+    
+}
+h2{
+    color: blue;
+   padding-top: 40px;
+   margin-left: 120px;
+   font-size: 40px;
+}
+#message {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
+#pixi-container {
+    width: 3000px; /* Largura do contêiner */
+    height: 1000px; /* Altura do contêiner */
+    margin-left: 400px; /* Posição à direita */
+    margin-top: -7=500px; /* Posição para cima */
+
+    overflow: hidden; /* Garante que os elementos que saiam do contêiner sejam cortados */
+}
+

@@ -61,17 +61,19 @@ function togglePasswordVisibility() {
         eyeIcon.classList.add('fa-eye-slash');
     }
 }
-const canvas = document.createElement('canvas'); // Cria um novo canvas
-const app = new PIXI.Application({ 
-    width: 900, 
-    height: 1023, 
-    view: canvas,
-    backgroundColor: 0xFFFFFF // Define o fundo branco
-   
+// Crie a instância de PIXI.Application
+const app = new PIXI.Application({
+    width: 800,  // Largura do canvas
+    height: 1000, // Altura do canvas
+    backgroundColor: 0xFFFFFF // Cor de fundo do canvas
 });
 
-// Adiciona o canvas ao DOM
+// Adicione o canvas criado pelo PIXI.js ao contêiner
 document.querySelector('#pixi-container').appendChild(app.view);
+
+// Cria uma instância de PIXI.Graphics para desenhar as conexões
+const connectionGraphics = new PIXI.Graphics();
+app.stage.addChild(connectionGraphics);
 
 // Função para criar uma partícula com forma de barra longa e cor aleatória
 function createParticle() {
@@ -108,8 +110,8 @@ for (let i = 0; i < 20; i++) { // Menos partículas
 
 // Função para desenhar linhas entre partículas próximas e misturar cores
 function drawConnections() {
-    const graphics = new PIXI.Graphics();
-    graphics.lineStyle(2, 0x000000); // Linha preta para conexões
+    connectionGraphics.clear(); // Limpa as conexões anteriores
+    connectionGraphics.lineStyle(2, 0x000000); // Linha preta para conexões
 
     particles.forEach((particle1, index1) => {
         particles.forEach((particle2, index2) => {
@@ -129,19 +131,13 @@ function drawConnections() {
                         (PIXI.utils.hex2rgb(color1)[2] + PIXI.utils.hex2rgb(color2)[2]) / 2
                     ]);
 
-                    graphics.lineStyle(2, mixedColor); // Linha com a cor misturada
-                    graphics.moveTo(particle1.x, particle1.y);
-                    graphics.lineTo(particle2.x, particle2.y);
+                    connectionGraphics.lineStyle(2, mixedColor); // Linha com a cor misturada
+                    connectionGraphics.moveTo(particle1.x, particle1.y);
+                    connectionGraphics.lineTo(particle2.x, particle2.y);
                 }
             }
         });
     });
-
-    // Adiciona o gráfico de conexões ao estágio
-    app.stage.addChild(graphics);
-
-    // Limpa as conexões a cada frame para desenhar novamente
-    app.stage.removeChild(graphics);
 }
 
 // Função para atualizar a posição das partículas
@@ -172,6 +168,9 @@ function animate() {
 
 // Inicia a animação
 animate();
+
+
+
 
 
 
@@ -220,66 +219,3 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-function register() {
-    const user = document.querySelector('#registerUser').value;
-    const password = document.querySelector('#registerPassword').value;
-
-    if (!user || !password) {
-        alert("Por favor, preencha os campos de usuário e senha.");
-        return;
-    }
-
-    const registerData = {
-        users: user,
-        senha: password
-    };
-
-    fetch('http://localhost:8080/api/login/register', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(registerData)
-    })
-    .then(response => response.text())
-    .then(message => {
-        console.log("Mensagem recebida do backend:", message);
-        alert(message);
-
-        if (message.trim() === 'Cadastro bem-sucedido!') {
-            const caixaCadastro = document.querySelector('#CaixaCadastro');
-            const caixaLogin = document.querySelector('#CaixaLogin');
-            if (caixaCadastro && caixaLogin) {
-                caixaCadastro.style.display = 'none';
-                caixaLogin.style.display = 'block';
-            } else {
-                console.error('Elementos de cadastro ou login não encontrados!');
-            }
-        }
-    })
-    .catch(error => {
-        alert('Erro ao processar o cadastro: ' + error.message);
-    });
-}
-
-function showRegisterForm() {
-    const caixaLogin = document.querySelector('#CaixaLogin');
-    const caixaCadastro = document.querySelector('#CaixaCadastro');
-    if (caixaLogin && caixaCadastro) {
-        caixaLogin.style.display = 'none';
-        caixaCadastro.style.display = 'block';
-    } else {
-        console.error('Elementos de cadastro ou login não encontrados!');
-    }
-}
-
-function hideRegisterForm() {
-    const caixaCadastro = document.querySelector('#CaixaCadastro');
-    const caixaLogin = document.querySelector('#CaixaLogin');
-    if (caixaCadastro && caixaLogin) {
-        caixaCadastro.style.display = 'none';
-        caixaLogin.style.display = 'block';
-    } else {
-        console.error('Elementos de cadastro ou login não encontrados!');
-    }
-}
