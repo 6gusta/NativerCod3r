@@ -1,7 +1,7 @@
 #CaixaLogin {
     width: 823PX;
     background-color: white;
-    height: 1030px;
+    height: 1070px;
     margin-left: 1025px;
     margin-top: -1042px;
     display: flexbox;
@@ -16,6 +16,7 @@ h1 {
 .login {
     color:  black;
     margin-left: 250px;
+
 
 }
 
@@ -74,6 +75,7 @@ h5 {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 50px;
     text-align: center;
+    font-size: 25px;
    
     z-index: 10;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -163,8 +165,8 @@ header{
 }
 footer{
 
-    background-color:  #0077b5;
-    height: 70PX;
+    background-color:  rgba(210, 207, 207, 0.954);
+    height: 170PX;
     margin-top: 0PX;
     width: 2100px;
 
@@ -232,6 +234,7 @@ footer{
         transition: background-color 0.3s ease;
         width: 150px; /* Ajusta a largura para acomodar o texto e ícone */
         box-sizing: border-box;
+        margin-top: 20px;
          /* Garante que o padding e border sejam incluídos na largura total */
     }
     
@@ -260,7 +263,7 @@ footer{
         
             width: 400px;
             margin-left: 300px;
-            margin-top: -20px;
+            margin-top: -150px;
             height: 70px;
             color: white;
             background-color: #1E3A8A;
@@ -278,7 +281,30 @@ footer{
         }
 
 
-       
+        h2{
+            font-size: 35px;
+           
+            padding-top: 60px;
+        }
+
+
+   #senha{
+    margin-top: 0px;
+   } 
+   
+   #username{
+    margin-top: 0px;
+
+   }
+
+   
+   p{
+    font-size: 20px;
+    color: #1E3A8A;
+    margin-left: 20px;
+    margin-top: 10px;
+    display: flex;
+   }
 
     
 

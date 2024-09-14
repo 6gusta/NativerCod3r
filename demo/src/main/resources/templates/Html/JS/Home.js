@@ -175,13 +175,13 @@ animate();
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Script carregado');
+    console.log('Script de login carregado');
 
     const loginButton = document.querySelector('.entrar');
     if (loginButton) {
         loginButton.addEventListener('click', function() {
-            const user = document.querySelector('.login_input[type="text"]').value;
-            const password = document.querySelector('.login_input[type="password"]').value;
+            const user = document.getElementById('username').value;
+            const password = document.getElementById('senha').value;
 
             if (!user || !password) {
                 alert("Por favor, preencha os campos de usuário e senha.");
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             const loginData = {
-                users: user,
+                username: user,
                 senha: password
             };
 
@@ -217,5 +217,3 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Botão de login não encontrado!');
     }
 });
-
-

@@ -2,67 +2,81 @@ document.addEventListener('DOMContentLoaded', function() {
     // Seleciona o botão de cadastro e adiciona um evento de clique que chama a função register()
     const registerButton = document.querySelector('#registerButton');
     if (registerButton) {
-        registerButton.addEventListener('click', register);
+        registerButton.addEventListener('click', registerButton);
     } else {
         console.error('Botão de cadastro não encontrado!');
     }
 });
 
-function register() {
-    const user = document.querySelector('#registerUser').value;
-    const password = document.querySelector('#registerPassword').value;
-    const email = document.querySelector("#registeremail").value;
-    console.log('Script carregado');
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Script de cadastro carregado');
 
-    if (!user || !password || !email) {
-        alert("Por favor, preencha todos os campos.");
-        return;
-    }
+    const registerButton = document.getElementById('registerButton');
+    if (registerButton) {
+        registerButton.addEventListener('click', function() {
+            const username = document.getElementById('registerUser').value;
+            const password = document.getElementById('registerPassword').value;
+            const email = document.getElementById('registeremail').value;
+            const telefone = document.getElementById('registerTelefone').value;
+            const dataDeNasc = document.getElementById('registerDatanasc').value;
+            const endereco = document.getElementById('registerEndereco').value;
+            const sexo = document.getElementById('registerSexo').value;
 
-    const registerData = {
-        users: user,
-        senha: password,
-        email: email
-    };
-
-    fetch('http://localhost:8080/api/login/register', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(registerData)
-    })
-    .then(response => response.text())
-    .then(message => {
-        console.log("Mensagem recebida do backend:", message);
-        alert(message);
-
-        if (message.trim() === 'Cadastro bem-sucedido!') {
-            console.log("Redirecionando para a página inicial...");
-            const caixaCadastro = document.querySelector('#CaixaCadastro');
-            const caixaLogin = document.querySelector('#CaixaLogin');
-            if (caixaCadastro && caixaLogin) {
-                caixaCadastro.style.display = 'none';
-                caixaLogin.style.display = 'block';
-                // Adiciona um pequeno atraso para garantir que a mudança de UI tenha efeito antes do redirecionamento
-                setTimeout(() => {
-                    window.location.href = 'PaginaInicial.html'; // Ajuste para o nome correto do arquivo
-                }, 0,5); // Ajuste o atraso conforme necessário
-            } else {
-                console.error('Elementos de cadastro ou login não encontrados!');
+            if (!username || !password || !email || !telefone || !dataDeNasc || !endereco || !sexo) {
+                alert("Por favor, preencha todos os campos.");
+                return;
             }
-        }
-    })
-    .catch(error => {
-        alert('Erro ao processar o cadastro: ' + error.message);
-    });
-}
 
+            const registerData = {
+                username: username,
+                senha: password,
+                email: email,
+                telefone: telefone,
+                dataDeNasc: dataDeNasc,
+                endereco: endereco,
+                sexo: sexo
+            };
+
+            fetch('http://localhost:8080/api/login/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(registerData)
+            })
+            .then(response => response.text())
+            .then(message => {
+                console.log("Mensagem recebida do backend:", message);
+                alert(message);
+
+                if (message.trim() === 'Cadastro bem-sucedido!') {
+                    const caixaCadastro = document.querySelector('#CaixaCadastro');
+                    const caixaLogin = document.querySelector('#CaixaLogin');
+                    if (caixaCadastro && caixaLogin) {
+                        caixaCadastro.style.display = 'none';
+                        caixaLogin.style.display = 'block';
+                        setTimeout(() => {
+                            window.location.href = 'PagInicail.html'; // Ajuste para o nome correto do arquivo
+                        }, 500);
+                    } else {
+                        console.error('Elementos de cadastro ou login não encontrados!');
+                        window.location.href = 'Login.html';
+                    }
+                }
+            })
+            .catch(error => {
+                alert('Erro ao processar o cadastro: ' + error.message);
+            });
+        });
+    } else {
+        console.error('Botão de registro não encontrado!');
+    }
+});
 
 // Crie a instância de PIXI.Application
 const app = new PIXI.Application({
-    width: 1000,  // Largura do canvas
-    height: 2000, // Altura do canvas
+    width: 2000,  // Largura do canvas
+    height: 1000, // Altura do canvas
     backgroundColor: 0xFFFFFF // Cor de fundo do canvas
 });
 

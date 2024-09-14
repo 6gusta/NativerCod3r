@@ -16,16 +16,19 @@
 }
 
 #CaixaCadastro {
-    background-color: #1099bb;
+  
 
     width: 400px;
-    height: 400px;
+    height: 800px;
     padding: 30px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     text-align: center;
-    margin-left: 35%;    
-   margin-top: -800px;
+    margin-left: 50%;    
+   margin-top: -950px;
+   background-color: whitesmoke;
+   transform: translateX(-50%); /* Centraliza horizontalmente */
+   
 }
 
 
@@ -38,7 +41,7 @@ label {
 }
 
 #registerUser,
-#registerPassword,#registeremail {
+#registerPassword,#registeremail,#registerTelefone,#registerDatanasc,#registerSexo,#registerEndereco{
     width: 100%;
     height: 40px;
     border-radius: 10px;
@@ -78,11 +81,14 @@ h2{
     margin-top: 10px;
 }
 #pixi-container {
-    width: 3000px; /* Largura do contêiner */
-    height: 1000px; /* Altura do contêiner */
-    margin-left: 400px; /* Posição à direita */
-    margin-top: -7=500px; /* Posição para cima */
+    width: 100% ;
+ 
+    
 
-    overflow: hidden; /* Garante que os elementos que saiam do contêiner sejam cortados */
+    
+
+    
 }
+
+
 

@@ -6,41 +6,51 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="Cadastro.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.0.2/pixi.min.js"></script>
+</head>
 <body>
 
     <header>
-        <h2 style="#1E3A8A">NativeCod3r</h2>
+        <h2 style="color:#1E3A8A;">NativeCod3r</h2>
     </header>
 
+    <div id="pixi-container">
+        <!-- O canvas será adicionado aqui pelo PIXI.js -->
+    </div>
 
-     <div id="pixi-container">
-            <!-- O canvas será adicionado aqui pelo PIXI.js -->
-        </div>
-
-
-        
     <div id="CaixaCadastro">
         <h1>Se registre na nossa plataforma de forma simples!</h1>
 
         <div class="login">
-            <label for="registerPassword">Email:</label>
-            <input id="registeremail" type="email" placeholder="Digite seu email" >
+            <label for="registeremail">Email:</label>
+            <input id="registeremail" type="email" placeholder="Digite seu email">
         </div>
         <div class="login">
             <label for="registerUser">Usuário:</label>
-            <input id="registerUser" type="text" placeholder="Digite um usuário" >
+            <input id="registerUser" type="text" placeholder="Digite um usuário">
         </div>
         <div class="login">
             <label for="registerPassword">Senha:</label>
-            <input id="registerPassword" type="password" placeholder="Digite uma senha" >
+            <input id="registerPassword" type="password" placeholder="Digite uma senha">
+        </div>
+        <div class="login">
+            <label for="registerTelefone">Telefone:</label>
+            <input id="registerTelefone" type="tel" placeholder="Digite seu telefone">
+        </div>
+        <div class="login">
+            <label for="registerDatanasc">Data de Nascimento:</label>
+            <input id="registerDatanasc" type="date" placeholder="Digite sua data de nascimento">
+        </div>
+        <div class="login">
+            <label for="registerSexo">Sexo:</label>
+            <input id="registerSexo" type="text" placeholder="Digite seu Sexo">
+        </div>
+        <div class="login">
+            <label for="registerEndereco">Endereço:</label>
+            <input id="registerEndereco" type="text" placeholder="Digite seu endereço">
         </div>
 
-      
-        
         <button id="registerButton">Cadastrar</button>
         <p id="message" style="color: green; font-weight: bold; margin-top: 10px;"></p>
-
-       
     </div>
 
     <!-- Inclusão do script JavaScript -->

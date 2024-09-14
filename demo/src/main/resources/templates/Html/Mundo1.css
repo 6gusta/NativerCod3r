@@ -181,3 +181,10 @@ p{
 h1{
     margin-left: 10px;
 }
+#sair{
+    background-color: gray;
+    color: white;
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+}
