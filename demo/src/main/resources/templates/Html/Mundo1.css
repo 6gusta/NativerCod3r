@@ -1,57 +1,58 @@
 .Aulas{
     border: 5px solid white ;
     width: 500px;
-    height: 1550px;
-    background-color: #0077b5;
-    color: white;
+    height: 1250px;
+    background-color: whitesmoke ;
+    color: black;
     font-size: 28px;
+    margin-top: -40px;
+    
    
    
 }
 li{
-    margin-bottom: 45px;
-    border: 3px solid white;
-    height: 60px;
+    margin-bottom: -30px;
+    border: 1px solid gray;
+    height: 9%10;
     margin-top: 30px;
+        background-color: white;
     
   
    
 
 }
-header{
-    background-color:whitesmoke ;
-    height: 90PX;
-    margin-top: -34PX;
-    width: 100%;
-    background-image: url(Imagens/png-clipart-robotics-logo-robot-electronics-logo.png);
-    background-repeat: no-repeat;
-    
- 
- 
-    
-    
+
+
+
+header {
+    text-align: center;
+    padding: 80px 20px;
+    background: #007BFF; /* Cor do cabeçalho */
+    color: white;
+    height: 220px;
 }
 #painel{
     border: 1px solid rgba(0, 0, 0, 0.226);
-    height: 1100px;
+    height: 1000px;
     margin-left: 555px;
-    margin-top: -1580px;
+    margin-top: -1400px;
     position: fixed;
     width: 2000px;
     
     background-color: white;
+  
 }
 body{
   
-    background-color: #0077b5;;
+    background-color:whitesmoke;
 }
 #robo{
     background-image: url(Imagens/WhatsApp\ Image\ 2024-08-12\ at\ 07.34.54.jpeg);
     border: 1px solid black;
     height: 300px;
     width: 400px;
-    margin-left: 1000px;
-    margin-top: -170px;
+    margin-left: 1500px;
+    margin-top: -640px;
     background-size: cover;
 }
 h2{
@@ -62,7 +63,7 @@ h2{
 .nuvem {
     position: absolute;
     top: 20px;
-    left: 60%;
+    left: 85%;
     transform: translateX(-50%);
     width: 200px;
     height: 90px;
@@ -74,7 +75,7 @@ h2{
     z-index: 10;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-    margin-top: 580px;
+    margin-top: 150px;
 
     
 }
@@ -163,12 +164,12 @@ h2{
 
 }
 #buttton{
-    margin-top: 200px;
+    margin-top: 700px;
     margin-left: -900px;
     background-color: green;
     color: white;
     height: 65px;
-    font-size: 20px;
+    font-size: 30px;
 }
 p{
     font-size: 25px;
@@ -188,3 +189,142 @@ h1{
     width: 100px;
     height: 40px;
 }
+
+#login{
+    background-color: green;
+    margin-left: 1700px;
+  height: 45px;
+  width: 200px;
+  color: white;
+  font-size: 30px;
+ 
+}
+#saibamais{
+    background-color: green;
+    margin-left: 50px;
+  height: 45px;
+  width: 200px;
+  color: white;
+  font-size: 30px;
+  margin-top:-80px;
+ 
+
+}
+
+
+h2 {
+    color: #2980b9;
+    font-size: 2.5em; /* Aumentando a fonte dos títulos */
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+.menu-container {
+    
+    flex-direction: column;
+    margin-top: -165px;
+    width: 200px;
+
+  
+   
+}
+
+.menu-toggle {
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.bar {
+    height: 7px;
+    width: 50px;
+    background: black;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+
+}
+
+.nav {
+    display: none; /* Escondido por padrão */
+    background-color: #fff;
+    
+    top: 50px;
+    right: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 0px;
+    font-size: 20px;
+    margin-top: 20px;
+    
+  
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+ 
+
+}
+
+.nav li {
+    padding: 15px;
+  
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+
+}
+
+.nav.show {
+    display: block; /* Mostra o menu quando ativo */
+}
+@media (max-width: 768px) {
+    .Aulas {
+        font-size: 20px; /* Reduz tamanho da fonte */
+    }
+
+    header {
+        padding: 20px 10px; /* Reduz padding */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Tamanho ajustado */
+    }
+
+    #painel, #robo, #login, #saibamais, #sair, #buttton {
+        width: 90%; /* Largura total em telas menores */
+        max-width: none; /* Remove limite de largura máxima */
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.2em; /* Tamanho ainda menor */
+    }
+
+    .nuvem {
+        width: 90%; /* Largura total em telas menores */
+        padding: 10px; /* Ajuste no padding */
+    }
+}
+
+
+footer  {
+ 
+    background-color:#007BFF ;
+    height: 100px;
+    margin-top: 600px;
+    font-size: 25px;
+    width: 3000px;
+    margin-left: -600px;
+    color: white;
+    }
+
+

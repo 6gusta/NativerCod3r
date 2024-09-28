@@ -1,0 +1,230 @@
+#CaixaLogin {
+    width: 600px;
+    background-color: whitesmoke;
+    height: 900px; /* Deixe a altura auto para acomodar o conteúdo */
+    margin: 20px auto; /* Centraliza a caixa e adiciona margem em cima e embaixo */
+    border-radius: 20px;
+    position: relative;
+    z-index: 2; /* Certifique-se de que fique acima do container */
+    padding: 20px; /* Adiciona padding para espaçamento interno */
+    margin-top: 60px;
+}
+header{
+    background-color:whitesmoke ;
+    height: 120PX;
+    margin-top: -34PX;
+    width: 100%;
+    background-image: url(Imagens/png-clipart-robotics-logo-robot-electronics-logo.png);
+    background-repeat: no-repeat;
+
+        position: relative; /* Para que o z-index funcione */
+        z-index: 3; /* Valor maior que o da caixa de login */
+        background:  #007BFF; /* Cor do rodapé */
+        color: white;
+    
+    
+    
+ 
+ 
+    
+    
+}
+
+h1 {
+    color: #2980b9;
+    font-size: 50px;
+    text-align: center; /* Centraliza o título */
+}
+
+.login {
+    color: #2980b9;
+    margin: 20px 0; /* Espaçamento entre os campos de login */
+    text-align: center; /* Centraliza os campos */
+}
+
+.login_input {
+    width: 80%; /* Ajuste a largura para ser responsivo */
+    height: 60px;
+    border-radius: 15px;
+    font-size: 20px;
+    margin: 10px 0; /* Espaçamento entre os campos */
+}
+
+.entrar {
+    width: 50%; /* Ajuste a largura para ser responsivo */
+    height: 50px;
+    color: white;
+    background-color: #1E3A8A;
+    font-size: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: block; /* Faz o botão ocupar a largura total */
+    margin: 20px auto; /* Centraliza o botão */
+}
+.entrars {
+    width: 50%; /* Ajuste a largura para ser responsivo */
+    height: 50px;
+    color: white;
+    background-color: #1E3A8A;
+    font-size: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: block; /* Faz o botão ocupar a largura total */
+    margin: 25px auto; /* Centraliza o botão */
+
+    margin-top: -15px;
+}
+
+.entrar:hover {
+    opacity: 0.9;
+}
+
+h6, h5 {
+    color: #2980b9;
+    text-align: center; /* Centraliza os textos */
+}
+
+#pixi-container {
+    position: absolute; /* Manter em posição absoluta */
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    z-index: 1; /* Mantém atrás do login */
+}
+
+.social-buttons {
+    display: flex;
+    flex-direction: row; /* Exibe os botões em linha */
+    gap: 50px; /* Espaço entre os botões */
+    justify-content: center; /* Centraliza os botões */
+    margin:- 20px; /* Centraliza a área de botões sociais */
+    margin-top: 50px;
+}
+
+.social-button {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    width: 150px; /* Largura fixa */
+    text-align: center; /* Centraliza o texto */
+
+}
+
+.google {
+    background-color: #db4437;
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.linkedin {
+    background-color: #0077b5;
+}
+
+.social-button:hover {
+    opacity: 0.9;
+}
+
+footer  {position: relative; /* Para que o z-index funcione */
+z-index: 2; /* Valor maior que a caixa de login */
+    background:  #007BFF; /* Cor do rodapé */
+    color: white;
+height: 90px;
+margin-top: 230px;
+font-size: 25px;
+
+}
+#togglePassword{
+    font-size: 25px;
+    margin-left: -50px;
+}
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+.menu-container {
+    
+    flex-direction: column;
+    margin-top: -165px;
+    width: 200px;
+
+  
+   
+}
+
+.menu-toggle {
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.bar {
+    height: 7px;
+    width: 50px;
+    background: black;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+
+}
+
+.nav {
+    display: none; /* Escondido por padrão */
+    background-color: #fff;
+    
+    top: 50px;
+    right: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 0px;
+    font-size: 20px;
+    margin-top: 20px;
+    
+  
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+ 
+
+}
+
+.nav li {
+    padding: 15px;
+  
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+
+}
+#login{
+    background-color: green;
+    margin-left: 1700px;
+  height: 40px;
+  width: 200px;
+  color: white;
+  font-size: 20px;
+ 
+}
+#saibamais{
+    background-color: green;
+    margin-left: 50px;
+  height: 40px;
+  width: 200px;
+  color: white;
+  font-size: 20px;
+  margin-top:-80px;
+ 
+
+}
+

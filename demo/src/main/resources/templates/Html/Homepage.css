@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 80px 20px;
+    background: #007BFF; /* Cor do cabeçalho */
+    color: white;
+    height: 260px;
+}
+
+header h1 {
+    font-size: 3.5em;
+    margin: 0;
+    margin-top: -30px;
+}
+
+header p {
+    font-size: 1.8em; /* Aumentando a fonte do texto do cabeçalho */
+    margin: 20px 0;
+}
+
+
+
+.cta-button:hover {
+    background: #e67e22;
+}
+
+main {
+    padding: 20px;
+}
+
+#about, .features {
+    background: white;
+    padding: 30px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+}
+
+h2 {
+    color: #2980b9;
+    font-size: 2.5em; /* Aumentando a fonte dos títulos */
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background:  #007BFF; /* Cor do rodapé */
+    color: white;
+    font-size: 1.2em; /* Aumentando a fonte do rodapé */
+}
+#login{
+    background-color: green;
+    margin-left: 1700px;
+  height: 40px;
+  width: 200px;
+  color: white;
+  font-size: 20px;
+ 
+}
+#saibamais{
+    background-color: green;
+    margin-left: 50px;
+  height: 40px;
+  width: 200px;
+  color: white;
+  font-size: 20px;
+  margin-top:-80px;
+ 
+
+}
+
+#robo{
+    background-image: url(Imagens/WhatsApp\ Image\ 2024-08-12\ at\ 07.34.54.jpeg);
+    border: 1px solid black;
+    height: 300px;
+    width: 400px;
+    margin-left: 1620px;
+    margin-top: -440px;
+    background-size: cover;
+   
+}
+.nuvem {
+    position: absolute;
+    top: 20px;
+    left: 60%;
+    transform: translateX(-50%);
+    width: 330px;
+    height: 390px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    text-align: center;
+   
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    margin-top: 800px;
+    margin-left: 565px;
+
+    
+}
+.nuvem::before {
+    content: '';
+    position: absolute;
+    bottom: -15px; /* Ajusta a posição da "cauda" da nuvem */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid rgba(255, 255, 255, 0.8);
+}
+.container:hover .nuvem {
+    display: block;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -10px;
+    padding: 5px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    user-select: none;
+    transition: 0.6s ease;
+    border-radius: 5px;
+}
+.prev,.next:hover{
+    color: #1E3A8A;
+
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+.carousel-image {
+    width: 100%; /* Ajuste conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Adiciona bordas arredondadas (opcional) */
+}
+
+.menu-container {
+    
+    flex-direction: column;
+    margin-top: -165px;
+    width: 200px;
+
+  
+   
+}
+
+.menu-toggle {
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.bar {
+    height: 7px;
+    width: 50px;
+    background: black;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+
+}
+
+.nav {
+    display: none; /* Escondido por padrão */
+    background-color: #fff;
+    
+    top: 50px;
+    right: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 0px;
+    font-size: 20px;
+    margin-top: 20px;
+    
+  
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+ 
+
+}
+
+.nav li {
+    padding: 15px;
+  
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+
+}
+
+.nav.show {
+    display: block; /* Mostra o menu quando ativo */
+}
+
+

@@ -3,7 +3,7 @@ let messageIndex = 0;
 
 const messageElement = document.querySelector('.message');
 const imageElement = document.querySelector('.carousel-image');
-const intervalTime = 3000; // Tempo em milissegundos (3 segundos)
+const intervalTime = 3000; 
 
 function updateCarousel() {
     messageElement.textContent = messages[messageIndex];

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Seleciona o botão de cadastro e adiciona um evento de clique que chama a função register()
+    
     const registerButton = document.querySelector('#registerButton');
     if (registerButton) {
         registerButton.addEventListener('click', registerButton);
@@ -28,11 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             const registerData = {
-                username: username,
+                users: username,
                 senha: password,
                 email: email,
                 telefone: telefone,
-                dataDeNasc: dataDeNasc,
+                datanasc: dataDeNasc,
                 endereco: endereco,
                 sexo: sexo
             };
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         caixaCadastro.style.display = 'none';
                         caixaLogin.style.display = 'block';
                         setTimeout(() => {
-                            window.location.href = 'PagInicail.html'; // Ajuste para o nome correto do arquivo
+                            window.location.href = 'PagInicail.html'; 
                         }, 500);
                     } else {
                         console.error('Elementos de cadastro ou login não encontrados!');
@@ -120,10 +120,10 @@ for (let i = 0; i < 20; i++) { // Menos partículas
     particles.push(particle);
 }
 
-// Função para desenhar linhas entre partículas próximas e misturar cores
+
 function drawConnections() {
-    connectionGraphics.clear(); // Limpa as conexões anteriores
-    connectionGraphics.lineStyle(2, 0x000000); // Linha preta para conexões
+    connectionGraphics.clear(); 
+    connectionGraphics.lineStyle(2, 0x000000); 
 
     particles.forEach((particle1, index1) => {
         particles.forEach((particle2, index2) => {
@@ -132,9 +132,8 @@ function drawConnections() {
                 const dy = particle1.y - particle2.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
 
-                // Desenha linha se a distância entre partículas for pequena
-                if (distance < 100) { // Distância ajustada
-                    // Mistura de cores
+                
+                if (distance < 100) { 
                     const color1 = particle1.color;
                     const color2 = particle2.color;
                     const mixedColor = PIXI.utils.rgb2hex([
@@ -143,7 +142,7 @@ function drawConnections() {
                         (PIXI.utils.hex2rgb(color1)[2] + PIXI.utils.hex2rgb(color2)[2]) / 2
                     ]);
 
-                    connectionGraphics.lineStyle(2, mixedColor); // Linha com a cor misturada
+                    connectionGraphics.lineStyle(2, mixedColor); 
                     connectionGraphics.moveTo(particle1.x, particle1.y);
                     connectionGraphics.lineTo(particle2.x, particle2.y);
                 }
@@ -152,13 +151,13 @@ function drawConnections() {
     });
 }
 
-// Função para atualizar a posição das partículas
+
 function updateParticles() {
     particles.forEach(particle => {
         particle.x += particle.vx;
         particle.y += particle.vy;
 
-        // Colisão com as bordas da tela
+    
         if (particle.x < 0 || particle.x > app.screen.width) {
             particle.vx *= -1;
         }
@@ -167,17 +166,32 @@ function updateParticles() {
         }
     });
 
-    // Desenha as conexões entre partículas próximas
+    
     drawConnections();
 }
 
-// Função de animação
+
 function animate() {
-    requestAnimationFrame(animate); // Solicita a próxima atualização de quadro
-    updateParticles(); // Atualiza as partículas
-    app.renderer.render(app.stage); // Renderiza o estágio
+    requestAnimationFrame(animate); 
+    updateParticles();
+    app.renderer.render(app.stage); 
 }
 
-// Inicia a animação
+
 animate();
+
+function togglePasswordVisibility(inputId, iconId) {
+    const campoSenha = document.getElementById(inputId);
+    const eyeIcon = document.getElementById(iconId);
+
+    if (campoSenha.type === 'password') {
+        campoSenha.type = 'text';
+        eyeIcon.classList.remove('fa-eye-slash');
+        eyeIcon.classList.add('fa-eye');
+    } else {
+        campoSenha.type = 'password';
+        eyeIcon.classList.remove('fa-eye');
+        eyeIcon.classList.add('fa-eye-slash');
+    }
+}
 

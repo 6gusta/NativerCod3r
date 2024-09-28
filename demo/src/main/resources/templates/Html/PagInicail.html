@@ -3,68 +3,79 @@
 <head>
     <meta charset="UTF-8" />
     <title>NativeCod3r</title>
-    <link rel="stylesheet" href="HOME.css">
+    <link rel="stylesheet" href="static/HOME.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="shortcut icon" href="Imagens/png-clipart-robotics-logo-robot-electronics-logo.png" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.0.2/pixi.min.js"></script>
 </head>
 <body>
     <header>
-        <h1 style="color: #1E3A8A;">NativeCod3r</h1>
+        <h1 style="color: white;">NativeCod3r</h1>
+    
+    
+     
+ 
+
+       <div>
+     
+       </div>
+
+       <div class="menu-container">
+        <div class="menu-toggle" id="menuToggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav class="nav" id="navMenu">
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#serviços">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li>   <button id="saibamais">Saiba mais</button> </li>
+                <li>      <button id="login" onclick="window.location.href='Homepage.html'">sair</button></li>
+            </ul>
+        </nav>
+    </div>
+       
+        
     </header>
 
-    <div class="container">
-        <img src="Imagens/WhatsApp Image 2024-08-12 at 07.34.54.jpeg" alt="img">
-        <div class="nuvem">
-            <span class="prev">&#10094;</span>
-            <p class="message">Bem Vindo !!</p>
-            <img class="carousel-image" src="Imagens/python-3-logo.svg" alt="Imagem do Carrossel">
-            <span class="next">&#10095;</span>
-        </div>
-        <div id="Visitante">
-            <button id="b1" onclick="window.location.href='Login.html'">Acessar Como Visitante</button>
-        </div>
-    </div>
+    <div id="pixi-container"></div> <!-- Container para partículas -->
 
-    <div id="pixi-container">
-        <!-- O canvas será adicionado aqui pelo PIXI.js -->
-    </div>
-
-    <div id="CaixaLogin">
-        <h1 style="color: black;"></h1>
+    <div id="CaixaLogin"> <!-- Caixa de login -->
+        <h1>Login</h1>
         <div class="login">
-            <h2>Usuário</h2>
+            <h2 style="font-size: 35px;">Usuário</h2>
             <input id="username" class="login_input" type="text" placeholder="Digite seu usuário">
         </div>
         <div class="login">
-            <h2>Senha</h2>
+            <h2  style="font-size: 35px;">Senha</h2>
             <input id="senha" class="login_input" type="password" placeholder="Digite sua senha">
             <span id="togglePassword" onclick="togglePasswordVisibility()">
                 <i id="eyeIcon" class="fas fa-eye-slash"></i>
             </span>
         </div>
         <button class="entrar">Entrar</button>
+      
+        <div class="social-buttons">
+            <a href="#" class="social-button google"><i class="fab fa-google"></i> Acesse com Google</a>
+            <a href="#" class="social-button facebook"><i class="fab fa-facebook-f"></i> Acesse com Facebook</a>
+            <a href="#" class="social-button linkedin"><i class="fab fa-linkedin-in"></i> Acesse com LinkedIn</a>
+        </div>
         <div id="regis">
-            <h6>Registre-se agora</h6>
-            <h5>Não possui conta? Clique no botão abaixo</h5>
+            <h6 style="font-size: 35px; margin-top: 45px;">Registre-se agora</h6>
+            <h5  style="font-size: 25px; margin-top: -30px;">Não possui conta? Clique no botão abaixo</h5>
             <button class="entrars" onclick="window.location.href='Cadastro.html'">Cadastrar</button>
         </div>
+        
     </div>
 
     <footer>
-        
-        <p>WhatsApp: 61997747833 </p>
-        <p> data de criação:12/12/23 </p>
-        <p>empresa localizada em : Luziania-GO </p>
-        
-
+        <p style="margin-left: 40%;"> &copy; 2024 NativeCod3r. Todos os direitos reservados.</p>
     </footer>
-
-    <div class="social-buttons">
-        <a href="#" class="social-button google"><i class="fab fa-google"></i> Acesse com Google</a>
-        <a href="#" class="social-button facebook"><i class="fab fa-facebook-f"></i> Acesse com Facebook</a>
-        <a href="#" class="social-button linkedin"><i class="fab fa-linkedin-in"></i> Acesse com LinkedIn</a>
-    </div>
+    
+   
 
     <script src="JS/Home.js"></script>
 </body>

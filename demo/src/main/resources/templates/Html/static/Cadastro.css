@@ -1,0 +1,186 @@
+#registerButton {
+    background-color: #1E3A8A;
+    color: white;
+    width: 100%;
+    height: 45px;
+    font-size: 25px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 40px;
+ 
+}
+#registerButton:hover {
+    background-color: #163A73;
+}
+
+#CaixaCadastro {
+  
+
+    width: 600px;
+    height: 1000px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    text-align: center;
+    margin-left: 50%;    
+   margin-top: -900px;
+   background-color: whitesmoke;
+   transform: translateX(-50%); /* Centraliza horizontalmente */
+   
+}
+
+
+label {
+    font-size: 25px;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+#registerUser,
+#registerPassword,#registeremail,#registerTelefone,#registerDatanasc,#registerSexo,#registerEndereco,#registerPasswordd{
+    width: 80%; /* Ajuste a largura para ser responsivo */
+    height: 60px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+h1 {
+    color: #2980b9;
+    font-size: 50px;
+    text-align: center; /* Centraliza o título */
+}
+header{
+    background-color:whitesmoke ;
+    height: 120PX;
+    margin-top: -34PX;
+    width: 100%;
+
+    background-repeat: no-repeat;
+
+        position: relative; /* Para que o z-index funcione */
+        z-index: 3; /* Valor maior que o da caixa de login */
+        background:  #007BFF; /* Cor do rodapé */
+        color: white;
+    
+    
+    
+ 
+ 
+    
+    
+}
+footer  {position: relative; /* Para que o z-index funcione */
+    z-index: 2; /* Valor maior que a caixa de login */
+        background:  #007BFF; /* Cor do rodapé */
+        color: white;
+    height: 90px;
+    margin-top: 230px;
+    font-size: 25px;
+    
+    }
+
+h2{
+    color: blue;
+   padding-top: 40px;
+   margin-left: 120px;
+   font-size: 40px;
+}
+#message {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
+#pixi-container {
+    width: 100% ;
+ 
+    
+
+    
+
+    
+}
+
+.menu-container {
+    
+    flex-direction: column;
+    margin-top: -165px;
+    width: 200px;
+
+  
+   
+}
+
+.menu-toggle {
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.bar {
+    height: 7px;
+    width: 50px;
+    background: black;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+
+}
+
+.nav {
+    display: none; /* Escondido por padrão */
+    background-color: #fff;
+    
+    top: 50px;
+    right: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 0px;
+    font-size: 20px;
+    margin-top: 20px;
+    
+  
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+ 
+
+}
+
+.nav li {
+    padding: 15px;
+  
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+
+}
+#togglePassword{
+    font-size: 35px;
+  
+}
+#eyeIcon1{
+    font-size: 23px;
+    color: #2980b9;
+    margin-left: -45px;
+}
+#eyeIcon2{
+    font-size: 23px;
+    color: #2980b9;
+    margin-left: -45px;
+}
+}
+
+

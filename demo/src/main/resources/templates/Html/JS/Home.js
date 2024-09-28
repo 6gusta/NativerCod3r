@@ -1,69 +1,28 @@
-const messages = ["Bem Vindo !!", "Pronto para aprender?", "Explore nossos cursos!", "Faça seu login ou se cadastre ou acesse Como Vistante", "Voce vai Aprender na sua jornada liguagens como Python", " Linguas do mundo todo Como Ingles"];
-const images = [
-    "Imagens/images.png",
-    "Imagens/learn-robot-adorable-ai-learning-with-3d-rendering-in-machine-concept_9784581.jpg",
-    "Imagens/learning-reading-book-3d-rendering-of-a-robot-engaged-in-machine-by_9785771.jpg",
-    "Imagens/image.png",
-    "Imagens/python-3-logo.svg",
-    "Imagens/logotipo-da-turma-de-língua-inglesa-dos-eua-fórum-do-programa-intercâmbio-línguas-e-sinal-comunicação-internacional-com-229856956.webp"
-];
-let messageIndex = 0;
 
-const messageElement = document.querySelector('.message');
-const imageElement = document.querySelector('.carousel-image');
-const intervalTime = 3000; // Tempo em milissegundos (3 segundos)
-
-function updateCarousel() {
-    messageElement.textContent = messages[messageIndex];
-    imageElement.src = images[messageIndex];
-}
-
-document.querySelector('.prev').addEventListener('click', function() {
-    messageIndex = (messageIndex === 0) ? messages.length - 1 : messageIndex - 1;
-    updateCarousel();
-});
-
-document.querySelector('.next').addEventListener('click', function() {
-    messageIndex = (messageIndex === messages.length - 1) ? 0 : messageIndex + 1;
-    updateCarousel();
-});
-
-// Função para trocar mensagens e imagens automaticamente
-function startCarousel() {
-    updateCarousel();
-    setInterval(function() {
-        messageIndex = (messageIndex === messages.length - 1) ? 0 : messageIndex + 1;
-        updateCarousel();
-    }, intervalTime);
-}
-
-// Inicia o carrossel quando a página carrega
-window.onload = startCarousel;
 
 
 function togglePasswordVisibility() {
-    // Seleciona o campo de entrada de senha e o ícone de olho
+   
     const campoSenha = document.getElementById('senha');
     const eyeIcon = document.getElementById('eyeIcon');
 
-    // Verifica o tipo atual do campo de entrada de senha
+ 
     if (campoSenha.type === 'password') {
-        // Se for 'password', mude para 'text' para mostrar a senha
+   
         campoSenha.type = 'text';
-        // Altere o ícone para 'fa-eye' para indicar que a senha está visível
+
         eyeIcon.classList.remove('fa-eye-slash');
         eyeIcon.classList.add('fa-eye');
     } else {
-        // Se for 'text', mude para 'password' para ocultar a senha
+
         campoSenha.type = 'password';
-        // Altere o ícone para 'fa-eye-slash' para indicar que a senha está oculta
+
         eyeIcon.classList.remove('fa-eye');
         eyeIcon.classList.add('fa-eye-slash');
     }
 }
-// Crie a instância de PIXI.Application
 const app = new PIXI.Application({
-    width: 800,  // Largura do canvas
+    width: 2000,  // Largura do canvas
     height: 1000, // Altura do canvas
     backgroundColor: 0xFFFFFF // Cor de fundo do canvas
 });
@@ -173,15 +132,14 @@ animate();
 
 
 
-
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Script de login carregado');
+    console.log('Script carregado');
 
     const loginButton = document.querySelector('.entrar');
     if (loginButton) {
         loginButton.addEventListener('click', function() {
-            const user = document.getElementById('username').value;
-            const password = document.getElementById('senha').value;
+            const user = document.querySelector('.login_input[type="text"]').value;
+            const password = document.querySelector('.login_input[type="password"]').value;
 
             if (!user || !password) {
                 alert("Por favor, preencha os campos de usuário e senha.");
@@ -189,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             const loginData = {
-                username: user,
+                users: user,
                 senha: password
             };
 
@@ -200,14 +158,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 body: JSON.stringify(loginData)
             })
-            .then(response => response.text())
-            .then(message => {
-                console.log("Mensagem recebida do backend:", message);
-                alert(message);
-
-                if (message.trim() === 'Login bem-sucedido!') {
-                    window.location.href = 'Login.html';
+            .then(response => {
+                if (response.ok) {
+                    return response.text(); 
+                } else {
+                    throw new Error('Credenciais inválidas');
                 }
+            })
+            .then(token => {
+                console.log("Token recebido:", token);
+                alert("Login bem-sucedido!");
+                
+                localStorage.setItem('authToken', token);
+
+                window.location.href = 'Login.html';
             })
             .catch(error => {
                 alert('Erro ao processar o login: ' + error.message);
@@ -217,3 +181,78 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Botão de login não encontrado!');
     }
 });
+
+
+function register() {
+    const user = document.querySelector('#registerUser').value;
+    const password = document.querySelector('#registerPassword').value;
+
+    if (!user || !password) {
+        alert("Por favor, preencha os campos de usuário e senha.");
+        return;
+    }
+
+    const registerData = {
+        users: user,
+        senha: password
+    };
+
+    fetch('http://localhost:8080/api/login/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(registerData)
+    })
+    .then(response => response.text())
+    .then(message => {
+        console.log("Mensagem recebida do backend:", message);
+        alert(message);
+
+        if (message.trim() === 'Cadastro bem-sucedido!') {
+            const caixaCadastro = document.querySelector('#CaixaCadastro');
+            const caixaLogin = document.querySelector('#CaixaLogin');
+            if (caixaCadastro && caixaLogin) {
+                caixaCadastro.style.display = 'none';
+                caixaLogin.style.display = 'block';
+            } else {
+                console.error('Elementos de cadastro ou login não encontrados!');
+            }
+        }
+    })
+    .catch(error => {
+        alert('Erro ao processar o cadastro: ' + error.message);
+    });
+}
+
+function showRegisterForm() {
+    const caixaLogin = document.querySelector('#CaixaLogin');
+    const caixaCadastro = document.querySelector('#CaixaCadastro');
+    if (caixaLogin && caixaCadastro) {
+        caixaLogin.style.display = 'none';
+        caixaCadastro.style.display = 'block';
+    } else {
+        console.error('Elementos de cadastro ou login não encontrados!');
+    }
+}
+
+function hideRegisterForm() {
+    const caixaCadastro = document.querySelector('#CaixaCadastro');
+    const caixaLogin = document.querySelector('#CaixaLogin');
+    if (caixaCadastro && caixaLogin) {
+        caixaCadastro.style.display = 'none';
+        caixaLogin.style.display = 'block';
+    } else {
+        console.error('Elementos de cadastro ou login não encontrados!');
+    }
+}
+
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+
+menuToggle.addEventListener('click', () =>{
+    navMenu.classList.toggle('show');
+
+});
+
+

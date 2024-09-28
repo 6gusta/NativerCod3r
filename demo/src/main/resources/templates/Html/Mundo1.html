@@ -10,15 +10,36 @@
 <body>
 
     <header>
-        <h1 style="#1E3A8A">NativeCod3r</h1>
+        <h1 style="font-size: 45px;">NativeCod3r</h1>
+        <p style="font-size: 35px;">A plataforma para aprender programação e inglês de forma prática e eficaz!</p>
+     
+       <button id="login" onclick="window.location.href='PagInicail.html'">Login</button>
 
-        
-        
-</header>
-<h2>Bem-Vindo ao Mundo 1 </h2>
-<button id="sair" onclick="window.location.href='login.html'">Sair</button>
+       <div>
+        <button id="saibamais">Saiba mais</button>
+       </div>
 
-    <ol class="Aulas">
+       <div class="menu-container">
+        <div class="menu-toggle" id="menuToggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav class="nav" id="navMenu">
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#serviços">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+       
+        
+    </header>
+
+
+    <ol class="Aulas" style="list-style-type: none;">
 
 
         <li> <p >Aula - 01</p> </li>
@@ -35,13 +56,15 @@
         <li> <p>Aula - 12</p>   </li>
         <li> <p>Aula - 12</p>  </li>
         <li><p>Aula - 14</p>  </li>
+        <button id="sair" onclick="window.location.href='login.html'">Sair</button>
+
 
         
         
     </ol>
    <div id="painel">
 
-     <h1>Desafio 1: O Tesouro do print</h1>
+     <h1 style="color: #2980b9;">Desafio 1: O Tesouro do print</h1>
 
     <div class="challenge">
         <h2></h2>
@@ -52,7 +75,7 @@
 
         <textarea id="print-code" placeholder="Digite seu código Python aqui..."></textarea>
        
-        <h1> Desafio 2: O Enigma do input</h1>
+        <h1 style="color: #2980b9;"> Desafio 2: O Enigma do input</h1>
         <p>Descrição: Você está em uma sala cheia de enigmas e precisa interagir com um console mágico. Para revelar o próximo enigma, você deve:</p>
         <p>Traduzir o termo "input" para o português.</p>
         <p>Escrever um código Python que pergunte ao usuário seu nome e depois exiba a mensagem: "Bem-vindo, [nome]!" onde [nome] é o nome inserido pelo usuário.</p>
@@ -80,8 +103,17 @@
 
    </div>
 
+ 
 
+
+
+   
+   
    <script src="JS/Mundo1.js"></script>
 
+ 
+   <footer>
+    <p style="margin-left: 850px;   margin-top: ;">&copy; 2024 NativeCod3r. Todos os direitos reservados.</p>
+</footer>
 </body>
 </html>

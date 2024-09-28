@@ -4,56 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="Cadastro.css">
+    <link rel="stylesheet" href="static/Cadastro.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.0.2/pixi.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="Imagens/png-clipart-robotics-logo-robot-electronics-logo.png" type="image/x-icon">
 </head>
 <body>
 
     <header>
-        <h2 style="color:#1E3A8A;">NativeCod3r</h2>
+        <h1 style="color: white;">NativeCod3r</h1>
+        
+        <div class="menu-container">
+            <div class="menu-toggle" id="menuToggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <nav class="nav" id="navMenu">
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#serviços">Serviços</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li>
+                     
+                </ul>
+            </nav>
+        </div>
     </header>
-
-    <div id="pixi-container">
-        <!-- O canvas será adicionado aqui pelo PIXI.js -->
-    </div>
+    <div id="pixi-container"></div>
 
     <div id="CaixaCadastro">
-        <h1>Se registre na nossa plataforma de forma simples!</h1>
-
+        <h1 style="font-size: 30px;">Se registre na nossa plataforma de forma simples!</h1>
         <div class="login">
             <label for="registeremail">Email:</label>
-            <input id="registeremail" type="email" placeholder="Digite seu email">
+            <input id="registeremail" type="email" placeholder="Digite seu email" required>
         </div>
         <div class="login">
             <label for="registerUser">Usuário:</label>
-            <input id="registerUser" type="text" placeholder="Digite um usuário">
+            <input id="registerUser" type="text" placeholder="Digite um usuário" required>
         </div>
         <div class="login">
             <label for="registerPassword">Senha:</label>
-            <input id="registerPassword" type="password" placeholder="Digite uma senha">
+            <input id="registerPassword" type="password" placeholder="Digite uma senha" required>
+            <span onclick="togglePasswordVisibility('registerPassword', 'eyeIcon1')">
+                <i id="eyeIcon1" class="fas fa-eye-slash"></i>
+            </span>
         </div>
         <div class="login">
+            <label for="registerPasswordd">Confirmar Senha:</label>
+            <input id="registerPasswordd" type="password" placeholder="Confirme sua senha" required>
+            <span onclick="togglePasswordVisibility('registerPasswordd', 'eyeIcon2')">
+                <i id="eyeIcon2" class="fas fa-eye-slash"></i>
+            </span>
+        </div>
+        
+        <div class="login">
             <label for="registerTelefone">Telefone:</label>
-            <input id="registerTelefone" type="tel" placeholder="Digite seu telefone">
+            <input id="registerTelefone" type="tel" placeholder="Digite seu telefone" required>
         </div>
         <div class="login">
             <label for="registerDatanasc">Data de Nascimento:</label>
-            <input id="registerDatanasc" type="date" placeholder="Digite sua data de nascimento">
+            <input id="registerDatanasc" type="date" required>
         </div>
         <div class="login">
             <label for="registerSexo">Sexo:</label>
-            <input id="registerSexo" type="text" placeholder="Digite seu Sexo">
+            <input id="registerSexo" type="text" placeholder="Digite seu Sexo" required>
         </div>
         <div class="login">
             <label for="registerEndereco">Endereço:</label>
-            <input id="registerEndereco" type="text" placeholder="Digite seu endereço">
+            <input id="registerEndereco" type="text" placeholder="Digite seu endereço" required>
         </div>
 
-        <button id="registerButton">Cadastrar</button>
-        <p id="message" style="color: green; font-weight: bold; margin-top: 10px;"></p>
+        <div class="form-group">
+            <button id="registerButton">Cadastrar</button>
+        </div>
     </div>
+    <footer>
+        <p style="margin-left: 40%;"> &copy; 2024 NativeCod3r. Todos os direitos reservados.</p>
+    </footer>
 
-    <!-- Inclusão do script JavaScript -->
     <script defer src="JS/Cadastro.js"></script>
 </body>
 </html>

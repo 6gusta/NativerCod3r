@@ -6,45 +6,44 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.Native.coder.Modelo.Login;
-import com.Native.coder.Modelo.Cadastro;
 import com.Native.coder.Servico.LoginServer;
 
 @RestController
 @RequestMapping("/api/login")
-@CrossOrigin(origins = "http://127.0.0.1:5500")  
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 public class LoginController {
-
+    
     @Autowired
     private LoginServer loginServer;
 
-    // Método para login
     @PostMapping
-    public ResponseEntity<String> login(@RequestBody Cadastro loginRequest) {
+    public ResponseEntity<String> login(@RequestBody Login loginRequest) {
         try {
-            boolean loginValido = loginServer.validarLogin(loginRequest.getUsername(), loginRequest.getSenha());
-
-            if (loginValido) {
-                return new ResponseEntity<>("Login bem-sucedido!", HttpStatus.OK);
+            
+            String token = loginServer.validarLogin(loginRequest.getUsers(), loginRequest.getSenha());
+            if (token != null) {
+                return ResponseEntity.ok(token);
             } else {
-                return new ResponseEntity<>("Usuário ou senha inválidos.", HttpStatus.UNAUTHORIZED);
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciais inválidas"); 
             }
         } catch (Exception e) {
-            return new ResponseEntity<>("Erro no login: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+            System.out.println("Erro: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao processar a solicitação");
         }
     }
 
-    // Método para registro
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody Cadastro registerRequest) {
+    public ResponseEntity<String> register(@RequestBody Login loginRequest) {
         try {
-            Cadastro newUser = loginServer.registrarUsuario(
-                registerRequest.getUsername(),
-                registerRequest.getSenha(),
-                registerRequest.getEmail(),
-                registerRequest.getTelefone(),
-                registerRequest.getDataDeNasc(),
-                registerRequest.getEndereco(),
-                registerRequest.getSexo()
+    
+            Login newUser = loginServer.criarLogin(
+                loginRequest.getUsers(),
+                loginRequest.getSenha(),
+                loginRequest.getEmail(),
+                loginRequest.getTelefone(),
+                loginRequest.getDatanasc(),
+                loginRequest.getSexo(),
+                loginRequest.getEndereco()
             );
             return new ResponseEntity<>("Cadastro bem-sucedido!", HttpStatus.CREATED);
         } catch (Exception e) {
