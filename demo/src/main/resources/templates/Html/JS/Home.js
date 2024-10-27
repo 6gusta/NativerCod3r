@@ -23,8 +23,8 @@ function togglePasswordVisibility() {
 }
 const app = new PIXI.Application({
     width: 2000,  // Largura do canvas
-    height: 1000, // Altura do canvas
-    backgroundColor: 0xFFFFFF // Cor de fundo do canvas
+    height: 1500, // Altura do canvas
+    backgroundColor: 0xFFF5F5F5// Cor de fundo do canvas
 });
 
 // Adicione o canvas criado pelo PIXI.js ao contêiner

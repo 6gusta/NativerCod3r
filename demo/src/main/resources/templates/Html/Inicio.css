@@ -1,20 +1,30 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+body{
+    background-color: whitesmoke;
+}
 
 #container{
     display: flex;
 
 }
    .Mundos{
-    width: 900px;
-    height: 300px;
+    width: 550px;
+    height: 550px;
   
-    margin-left: 250px;
-    margin-top: 450px;
+    margin-left: 50px;
+    margin-top: 190px;
     border: 1px solid black;
     
  
 
-    background-image: url(Imagens/python-3-logo.svg);
+    background-image: url(Imagens/c76d031e-2064-4ed6-9f87-d1c65e69d33f.jpg);
     background-size: cover;
+    border-radius: 10px;
  
     
 
@@ -23,84 +33,98 @@
  
 }
 
-#Mundo{
-    
-    height: 300px;
-    width: 1100px;
-    
-   
-
-    background-image: url(Imagens/logotipo-da-turma-de-língua-inglesa-dos-eua-fórum-do-programa-intercâmbio-línguas-e-sinal-comunicação-internacional-com-229856956.webp);
-    background-size: cover;
-    border: 1px solid black;
-    border-left: none;
-    margin-top: 450px;
- 
- margin-left: -20px;
-    
-
-   
-
- 
-}
-
-
-.Linhas{
+#sair{
+    background-color: white;
+    color: black;
+    font-size: 20px;
     width: 250px;
-    height: 3px;
-    background-color: black;
+    height: 50px;
+    margin-top: 0px;
+    border: 2px solid gray ;
+    cursor: pointer;
+}
 
-    margin-left: 320px;
+
+
+.Mundo{
+    width: 550px;
+    height: 550px;
+  
+    margin-left: 50px;
+    margin-top: 190px;
+    border: 1px solid black;
+    
+ 
+
+    background-image: url(Imagens/WhatsApp\ Image\ 2024-10-20\ at\ 10.12.00.jpeg);
+    background-size: cover;
+    border-radius: 10px;
+ 
     
 
-    margin-top: -150px;
+   
 
+ 
+}
+.Mundi{
+    width: 550px;
+    height: 550px;
+  
+    margin-left: 50px;
+    margin-top: 190px;
+    border: 1px solid black;
+    
+ 
+
+    background-image: url(Imagens/WhatsApp\ Image\ 2024-10-20\ at\ 10.12.00\ \(1\).jpeg);
+    background-size: cover;
+    border-radius: 10px;
+ 
+    
 
    
 
  
 }
 
-header{
-    background-color:whitesmoke ;
-    height: 90PX;
-    margin-top: -34PX;
-    width: 100%;
-    background-image: url(Imagens/png-clipart-robotics-logo-robot-electronics-logo.png);
+
+
+header {
+    text-align: center;
+    padding: 80px 20px;
+    background: #007BFF; /* Cor do cabeçalho */
+    color: white;
+    height: 140px;
+    background-image: url(imagens/a6ead899-bcdc-4f72-8bbf-e4f40c1601de.jpg);
+  
+    background-size: 20%;
+  
+  
     background-repeat: no-repeat;
-    
- 
- 
-    
-    
+    background-position: 1500px -70px;
 }
-#linha1{
-    width: 250px;
-    height: 3px;
-    background-color: black;
-
-    margin-left: 0px;
-    
-
-    margin-top: -150px;
-
-   
-
+#saibamais{
+    background-color: green;
+    margin-left: 50px;
+  height: 40px;
+  width: 200px;
+  color: white;
+  font-size: 20px;
+  margin-top:40px;
  
+
 }
-#linha2{
-    width: 250px;
-    height: 3px;
-    background-color: black;
 
-    margin-left: 690px;
-    
+header h1 {
+    font-size: 3.5em;
+    margin: 0;
+    margin-top: -30px;
 
-    margin-top: -150px;
-
+  
+  
    
-
- 
+  
+  
 }
 #container2{
     display: flex;
@@ -121,7 +145,7 @@ h1{
     display: inline-block; /* Mantém o ícone como um bloco inline */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
     transition: transform 0.3s ease, color 0.3s ease; /* Transições suaves */
-    margin-left: 120px;
+    margin-left: 240px;
     margin-top: 60px;
 }
 
@@ -133,11 +157,12 @@ h1{
     font-size: 50px;
     color: #555;
     position: absolute;
-    top: 460px;
-    left: 500px;
+    top: 410px;
+    left: 420px;
     transform: translateX(-50%);
     animation: bounce 1s infinite;
 }
+
 
 @keyframes bounce {
     0%, 100% {
@@ -160,6 +185,11 @@ h1{
     color: #333;
     position: relative;
 }
+
+header p {
+    font-size: 1.8em; /* Aumentando a fonte do texto do cabeçalho */
+    margin: 20px 0;
+}
 .message-cloud {
     position: relative;
     background-color: #f0f0f0;
@@ -171,9 +201,9 @@ h1{
     color: #333;
     margin: 50px auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-left: 370px;
+    margin-left: 300px;
     width: 200px;
-    margin-top: -620px;
+    margin-top: -870px;
     background-image: url(Imagens/images.png);
     background-size: cover;
 }
@@ -196,3 +226,92 @@ h7{
     
     
 }
+
+.menu-container {
+    
+    flex-direction: column;
+    margin-top: -50px;
+    width: 250px;
+
+  
+   
+
+}
+
+.menu-toggle {
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.bar {
+    height: 7px;
+    width: 50px;
+    background: black;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+
+}
+
+.nav {
+    display: none; /* Escondido por padrão */
+    background-color: #fff;
+    
+    top: 50px;
+    right: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 0px;
+    font-size: 20px;
+    margin-top: 20px;
+    
+  
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+ 
+
+}
+
+.nav li {
+    padding: 15px;
+    width: 220px;
+  
+}
+
+li:hover{
+    background-color: green;
+    color: white;
+}
+#sair:hover{
+    background-color: green;
+}
+
+
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+
+}
+
+.nav.show {
+    display: block; /* Mostra o menu quando ativo */
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background:  #007BFF; /* Cor do rodapé */
+    color: white;
+    font-size: 1.2em; /* Aumentando a fonte do rodapé */
+    margin-top: 700px;
+}
+
+
+

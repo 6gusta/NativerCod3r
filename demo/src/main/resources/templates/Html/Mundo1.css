@@ -1,25 +1,74 @@
 .Aulas{
-    border: 5px solid white ;
+    border: 1px solid blue;
     width: 500px;
-    height: 1250px;
+    height: 1300px;
     background-color: whitesmoke ;
     color: black;
     font-size: 28px;
-    margin-top: -40px;
+    margin-top: 40px;
+    font-family: 'Arial', sans-serif;
+    list-style-type: none;
+
     
    
    
 }
 li{
     margin-bottom: -30px;
-    border: 1px solid gray;
-    height: 9%10;
+  
+    height: 9%;
     margin-top: 30px;
-        background-color: white;
+        background-color: whitesmoke;
+        margin-left: -20px;
+        width: 500px;
+        
     
   
    
 
+}
+
+.Aulas li p {
+
+    padding: 15px;
+    border: 2px solid #3498db;
+    border-radius: 12px;
+    background-color: white;
+    color: #3498db;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    font-weight: bold;
+    height: 40%;
+    margin-bottom: 50px;
+}
+
+.Aulas li p:hover {
+    background-color: #3498db;
+    color: white;
+    transform: translateY(-5px);
+}
+
+.Aulas li p:active {
+    transform: translateY(0);
+    background-color: #2980b9;
+}
+
+.Aulas li p:before {
+    content: '';
+    display: inline-block;
+    margin-right: 10px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #3498db;
+    transition: background-color 0.3s ease;
+}
+
+.Aulas li p:hover:before {
+    background-color: white;
 }
 
 
@@ -30,12 +79,20 @@ header {
     background: #007BFF; /* Cor do cabeçalho */
     color: white;
     height: 220px;
+
+    background-image: url(imagens/a6ead899-bcdc-4f72-8bbf-e4f40c1601de.jpg);
+  
+    background-size: 20%;
+  
+  
+    background-repeat: no-repeat;
+    background-position: 2000px -70px;
 }
 #painel{
     border: 1px solid rgba(0, 0, 0, 0.226);
     height: 1000px;
     margin-left: 555px;
-    margin-top: -1400px;
+    margin-top: -1330px;
     position: fixed;
     width: 2000px;
     
@@ -164,7 +221,7 @@ h2{
 
 }
 #buttton{
-    margin-top: 700px;
+    margin-top: 650px;
     margin-left: -900px;
     background-color: green;
     color: white;
@@ -183,11 +240,14 @@ h1{
     margin-left: 10px;
 }
 #sair{
-    background-color: gray;
-    color: white;
+    background-color: white;
+    color: black;
     font-size: 20px;
-    width: 100px;
-    height: 40px;
+    width: 500px;
+    height: 50px;
+    margin-top: 30px;
+    border: 2px solid gray ;
+    cursor: pointer;
 }
 
 #login{
@@ -206,7 +266,7 @@ h1{
   width: 200px;
   color: white;
   font-size: 30px;
-  margin-top:-80px;
+
  
 
 }
@@ -225,7 +285,7 @@ ul {
     
     flex-direction: column;
     margin-top: -165px;
-    width: 200px;
+    width: 500px;
 
   
    
@@ -273,6 +333,8 @@ ul {
 
 .nav li {
     padding: 15px;
+    cursor: pointer;
+    
   
 }
 

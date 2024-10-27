@@ -19,22 +19,45 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = document.getElementById('registeremail').value;
             const telefone = document.getElementById('registerTelefone').value;
             const dataDeNasc = document.getElementById('registerDatanasc').value;
-            const endereco = document.getElementById('registerEndereco').value;
+            const rua = document.getElementById('registerrua').value; // Corrigido para 'registerrua'
+            const lote = document.getElementById('registerlote').value; // Corrigido para 'registerlote'
+            const quadra = document.getElementById('registerquadra').value; // Corrigido para 'registerquadra'
+            const bairro = document.getElementById('registerbairro').value; // Corrigido para 'registerbairro'
+            const cep = document.getElementById('registercep').value; // Corrigido para 'registercep'
+            const cidade = document.getElementById('registercidade').value; // Corrigido para 'registercidade'
+            const estado = document.getElementById('registerestado').value; // Corrigido para 'registerestado'
             const sexo = document.getElementById('registerSexo').value;
 
-            if (!username || !password || !email || !telefone || !dataDeNasc || !endereco || !sexo) {
+            if (!username || !password || !email || !telefone || !dataDeNasc || !rua || !lote || !quadra || !bairro || !cep || !cidade || !estado || !sexo) {
                 alert("Por favor, preencha todos os campos.");
                 return;
             }
 
+            
+
             const registerData = {
-                users: username,
-                senha: password,
-                email: email,
-                telefone: telefone,
-                datanasc: dataDeNasc,
-                endereco: endereco,
-                sexo: sexo
+                login: {
+                    users: username,
+                    senha: password,
+                    datanasc : dataDeNasc,
+                    sexo : sexo
+
+                },
+                email: {
+                    emailuser: email
+                },
+                telefone: {
+                    telefoneuser: telefone
+                },
+                endereco: {
+                    rua: document.getElementById('registerrua').value,
+                    quadra: document.getElementById('registerquadra').value,
+                    lote: document.getElementById('registerlote').value,
+                    cep: document.getElementById('registercep').value,
+                    bairro: document.getElementById('registerbairro').value,
+                    cidade: document.getElementById('registercidade').value,
+                    estado: document.getElementById('registerestado').value
+                }
             };
 
             fetch('http://localhost:8080/api/login/register', {
@@ -73,11 +96,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
 // Crie a instância de PIXI.Application
 const app = new PIXI.Application({
     width: 2000,  // Largura do canvas
-    height: 1000, // Altura do canvas
-    backgroundColor: 0xFFFFFF // Cor de fundo do canvas
+    height: 2500, // Altura do canvas
+    backgroundColor: 0xFFF5F5F5// Cor de fundo do canvas
 });
 
 // Adicione o canvas criado pelo PIXI.js ao contêiner
@@ -194,4 +218,5 @@ function togglePasswordVisibility(inputId, iconId) {
         eyeIcon.classList.add('fa-eye-slash');
     }
 }
+
 

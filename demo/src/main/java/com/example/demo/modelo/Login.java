@@ -4,11 +4,15 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Login {
@@ -19,13 +23,20 @@ public class Login {
 
     private String users;
     private String senha;
-    private String email; 
-    private String telefone;       
     private String datanasc;       
     private String sexo;          
-    private String endereco;  
     private  int loginCount = 0;
+    @ManyToOne
+    @JoinColumn(name = "world_id")
+    private World mundoAtual;
     
+    @OneToOne(cascade = CascadeType.ALL)
+    private Email email;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Telefone telefone;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Endereco endereco;
     
     @ElementCollection
     private List<LocalDateTime> loginTimes = new ArrayList<>();
@@ -54,21 +65,7 @@ public class Login {
         this.senha = senha;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
+   
 
     public String getDatanasc() {
         return datanasc;
@@ -86,13 +83,6 @@ public class Login {
         this.sexo = sexo;
     }
 
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
 
 	public int getLoginCount() {
 		return loginCount;
@@ -112,4 +102,25 @@ public class Login {
     	
     	
     }
+    public void setEmail(Email email) {
+        this.email = email;
+    }
+
+    public void setTelefone(Telefone telefone) {
+        this.telefone = telefone;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+    
+
+    public World getMundoAtual() {
+        return mundoAtual;
+    }
+
+    public void setMundoAtual(World mundoAtual) {
+        this.mundoAtual = mundoAtual;
+    }
 }
+

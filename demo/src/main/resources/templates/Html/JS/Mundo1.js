@@ -19,3 +19,12 @@ document.querySelector('.next').addEventListener('click', function() {
     messageIndex = (messageIndex === messages.length - 1) ? 0 : messageIndex + 1;
     updateCarousel();
 });
+
+
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+});
+

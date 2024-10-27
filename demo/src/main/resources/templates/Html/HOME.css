@@ -1,21 +1,31 @@
 #CaixaLogin {
     width: 600px;
-    background-color: whitesmoke;
-    height: 900px; /* Deixe a altura auto para acomodar o conteúdo */
+    background-color: white;
+    height: 950px; /* Deixe a altura auto para acomodar o conteúdo */
     margin: 20px auto; /* Centraliza a caixa e adiciona margem em cima e embaixo */
     border-radius: 20px;
     position: relative;
     z-index: 2; /* Certifique-se de que fique acima do container */
     padding: 20px; /* Adiciona padding para espaçamento interno */
     margin-top: 60px;
+    background-image: url(imagens/a6ead899-bcdc-4f72-8bbf-e4f40c1601de.jpg);
+  
+    background-size: 50%;
+  
+  
+    background-repeat: no-repeat;
+    background-position: 160px -70px;
+
+
+   
 }
+
 header{
     background-color:whitesmoke ;
     height: 120PX;
-    margin-top: -34PX;
+    margin-top: 0PX;
     width: 100%;
-    background-image: url(Imagens/png-clipart-robotics-logo-robot-electronics-logo.png);
-    background-repeat: no-repeat;
+  
 
         position: relative; /* Para que o z-index funcione */
         z-index: 3; /* Valor maior que o da caixa de login */
@@ -72,7 +82,7 @@ h1 {
     display: block; /* Faz o botão ocupar a largura total */
     margin: 25px auto; /* Centraliza o botão */
 
-    margin-top: -15px;
+    margin-top: 15px;
 }
 
 .entrar:hover {
@@ -134,10 +144,14 @@ footer  {position: relative; /* Para que o z-index funcione */
 z-index: 2; /* Valor maior que a caixa de login */
     background:  #007BFF; /* Cor do rodapé */
     color: white;
-height: 90px;
+height: 140px;
 margin-top: 230px;
 font-size: 25px;
 
+}
+*{
+    margin: 0;
+  
 }
 #togglePassword{
     font-size: 25px;

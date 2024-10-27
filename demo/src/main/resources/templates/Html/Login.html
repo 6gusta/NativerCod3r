@@ -13,8 +13,35 @@
 </head>
 <body>
     <header>
-        <h1 style="#1E3A8A">NativeCod3r</h1>
-</header>
+        <h1>NativeCod3r</h1>
+        <p>A plataforma para aprender programação e inglês de forma prática e eficaz!</p>
+     
+   
+
+  
+
+       <div class="menu-container">
+        <div class="menu-toggle" id="menuToggle">                 
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav class="nav" id="navMenu">
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#serviços">Serviços</a></li>
+                <button id="sair" onclick="window.location.href='login.html'">Sair</button>
+            </ul>
+        </nav>
+    </div>
+    <div id="sabe">
+        <button id="saibamais">Saiba mais</button>
+       </div>
+       
+        
+    </header>
+    
 
 
 
@@ -28,8 +55,8 @@
 
     
     
-    <div  class="Mundos" onclick="window.location.href='Mundo1.html'">
-        <h2>Mundo 1</h2>
+    <div  class="Mundos"  data-mundo="1" onclick="iniciarRegistro(this)">
+        <h2  style="font-size: 40px; margin-left: 30px; margin-top: 10px;">Mundo 1</h2>
       
         
         
@@ -37,19 +64,10 @@
     </div>
 
 
-    <div  id="Mundo">
 
-       
+    <div class="Mundi"  data-mundo="2" onclick="iniciarRegistro(this)">
 
-       
-        
-        
-      
-    </div>
-
-    <div class="Mundos">
-
-        <h3>Mundo 2</h3>
+        <h3  style="font-size: 40px; margin-left: 30px; margin-top: 10px;">Mundo 2</h3>
         <div class="lock-icon">
             <i class="fa fa-lock"></i>
         </div>
@@ -59,9 +77,9 @@
     </div>
 
 
-    <div class="Mundos">
+    <div class="Mundo"  data-mundo="3" onclick="iniciarRegistro(this)">
 
-        <h4>Mundo 3</h4>
+        <h4 style="font-size: 40px; margin-left: 30px; margin-top: 10px;">Mundo 3</h4>
         <div class="lock-icon">
             <i class="fa fa-lock"></i>
         </div>
@@ -71,28 +89,15 @@
     
 </div>
 
-<div id="container2">
-    <div  id="linha1">
-    
-    
-    </div>
-    
-    <div id="linha2">
-    
- 
-    
-    </div>
-    
-    
-    <div class="Linhas">
-    
-       
-    
-    </div>
-</div>
+
 <div class="message-cloud">
   <h7> Comece aqui ! </h7>
 </div>
-    
+
+<footer>
+    <p>&copy; 2024 NativeCod3r. Todos os direitos reservados.</p>
+</footer>
+
+<script src="JS/Cursos.js"></script>
 </body>
 </html>

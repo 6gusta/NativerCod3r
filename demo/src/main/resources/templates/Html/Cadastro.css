@@ -9,6 +9,8 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 40px;
+
+
  
 }
 #registerButton:hover {
@@ -19,17 +21,25 @@
   
 
     width: 600px;
-    height: 1000px;
+    height: 2000px;
     padding: 30px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     text-align: center;
     margin-left: 50%;    
-   margin-top: -900px;
-   background-color: whitesmoke;
+   margin-top: -2400px;
+   background-color: white;
    transform: translateX(-50%); /* Centraliza horizontalmente */
+   background-image: url(imagens/a6ead899-bcdc-4f72-8bbf-e4f40c1601de.jpg);
+  
+   background-size: 50%;
+ 
+ 
+   background-repeat: no-repeat;
+   background-position: 160px -40px;
    
 }
+
 
 
 label {
@@ -41,7 +51,7 @@ label {
 }
 
 #registerUser,
-#registerPassword,#registeremail,#registerTelefone,#registerDatanasc,#registerSexo,#registerEndereco,#registerPasswordd{
+#registerPassword,#registeremail,#registerTelefone,#registerDatanasc,#registerSexo,#registerEndereco,#registerPasswordd,#registerrua,#registerlote,#registerquadra,#registerbairro,#registercep,#registercidade,#registerestado{
     width: 80%; /* Ajuste a largura para ser responsivo */
     height: 60px;
     border-radius: 10px;
@@ -81,7 +91,7 @@ footer  {position: relative; /* Para que o z-index funcione */
         background:  #007BFF; /* Cor do rodapé */
         color: white;
     height: 90px;
-    margin-top: 230px;
+    margin-top: 290px;
     font-size: 25px;
     
     }
