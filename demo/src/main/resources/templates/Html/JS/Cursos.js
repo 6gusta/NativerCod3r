@@ -15,53 +15,46 @@ Array.from(teste).forEach((element) => {
 });
 
 
+function getUsuarioLogadoId() {
+    // Lógica para obter o ID do usuário logado
+    return localStorage.getItem('usuarioId'); // Ajuste conforme necessário
+}
+
 function iniciarRegistro(element) {
     const mundoId = element.getAttribute('data-mundo');
 
-    // Chamada para registrar (sem ID do usuário)
-    fetch('/api/login/register', {
+    // Obtém o ID do usuário logado
+    const usuarioId = getUsuarioLogadoId();
+
+    // Verifica se o ID do usuário é válido
+    if (!usuarioId) {
+        console.error('Usuário não está logado.');
+        return; // Não prosseguir se o usuário não estiver logado
+    }
+
+    // Requisição para associar o mundo ao usuário logado
+    fetch('/api/login/assignMundo', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            // Campos necessários para o registro, se houver
+            id: usuarioId,  // ID do usuário logado
+            mundoid: mundoId // ID do mundo selecionado
         })
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('Erro ao registrar: ' + response.statusText);
+            throw new Error('Erro ao associar o mundo: ' + response.statusText);
         }
         return response.json();
     })
     .then(data => {
-        console.log('Registro realizado com sucesso:', data);
-
-        // Requisição para associar o mundo
-        fetch('/api/login/assignMundo', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                mundoId: mundoId // Apenas associando o mundo
-            })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Erro ao associar o mundo: ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Mundo associado com sucesso:', data);
-            window.location.href = `Mundo1.html?id=${mundoId}`;
-        })
-        .catch(error => {
-            console.error('Erro ao associar o mundo:', error);
-        });
+        console.log('Mundo associado com sucesso:', data);
+        // Redireciona para a página do mundo
+        window.location.href = `Mundo${mundoId}.html?id=${mundoId}`;
     })
     .catch(error => {
-        console.error('Erro ao registrar:', error);
+        console.error('Erro ao associar o mundo:', error);
     });
 }

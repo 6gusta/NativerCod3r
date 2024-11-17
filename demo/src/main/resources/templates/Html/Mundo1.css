@@ -1,5 +1,5 @@
 .Aulas{
-    border: 1px solid blue;
+
     width: 500px;
     height: 1300px;
     background-color: whitesmoke ;
@@ -220,7 +220,26 @@ h2{
 
 
 }
-#buttton{
+#print-translation2{
+    width: 200px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 15px;
+    font-size: 15px;
+}
+#print-code2{
+
+    width: 400px;
+    height: 190px;
+    margin-left: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 20px;
+  
+
+
+}
+#butttonmundo{
     margin-top: 650px;
     margin-left: -900px;
     background-color: green;
@@ -390,3 +409,60 @@ footer  {
     }
 
 
+    @media (max-width: 768px) {
+        .Aulas {
+            width: 30%; /* Largura total em telas menores */
+            height: auto; /* Altura automática */
+            font-size: 20px; /* Reduz tamanho da fonte */
+            margin-top: 20px; /* Ajusta a margem superior */
+        }
+    
+        li {
+            width: 100%; /* Largura total */
+            margin-left: 0; /* Remove margem esquerda */
+        }
+    
+        header {
+            padding: 20px 10px; /* Reduz padding */
+        }
+    
+         #robo, #login, #saibamais, #sair, #buttton {
+            width: 40%; /* Largura total em telas menores */
+            max-width: none; /* Remove limite de largura máxima */
+            margin: 0 auto;
+             /* Centraliza */
+        }
+        #painel{
+            margin-left: 290px;
+            width: 40%;
+
+        }
+    
+        #robo {
+            margin-left: auto; /* Remove margem esquerda */
+            margin-right: auto; /* Centraliza à direita */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        h2 {
+            font-size: 1.5em; /* Reduz tamanho do título */
+        }
+    
+        .Aulas {
+            font-size: 18px; /* Menor ainda em telas muito pequenas */
+        }
+    
+        #painel {
+            height: auto; /* Altura automática */
+        }
+    
+        .nuvem {
+            width: 150px; /* Menor largura */
+            padding: 15px; /* Ajusta padding */
+        }
+    
+        .prev, .next {
+            font-size: 16px; /* Reduz tamanho da fonte */
+        }
+    }

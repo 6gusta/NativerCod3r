@@ -242,3 +242,23 @@ ul {
 
 }
 
+@media (max-width: 768px) {
+    header {
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .entrar, .entrars {
+        font-size: 20px;
+    }
+
+    #login, #saibamais {
+        width: 80%;
+        margin: 10px auto;
+    }
+}
+O que foi ajustado:
+Caixa de login: Agora se adapta automaticamente ao conteúdo e ao tamanho da tela.

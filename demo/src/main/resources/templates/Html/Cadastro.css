@@ -191,6 +191,39 @@ h2{
     color: #2980b9;
     margin-left: -45px;
 }
+@media (min-width: 768px) {
+    #CaixaCadastro {
+        width: 600px;
+        height: auto; /* Evita scroll desnecessário */
+    }
 }
 
+/* Estilo para telas entre 480px e 768px (tablet) */
+@media (max-width: 768px) and (min-width: 480px) {
+    #CaixaCadastro {
+        width: 90%; /* Mais espaço em telas médias */
+    }
 
+    h1 {
+        font-size: 40px;
+    }
+
+    label {
+        font-size: 22px;
+    }
+}
+
+/* Estilo para telas menores que 480px (smartphone) */
+@media (max-width: 480px) {
+    #CaixaCadastro {
+        width: 95%; 
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    label {
+        font-size: 18px;
+    }

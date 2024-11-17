@@ -1,6 +1,9 @@
 package com.Native.coder.Controller;
 
+import java.util.List;
 import java.util.Optional;
+
+import javax.security.auth.login.AccountNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,9 +13,11 @@ import org.springframework.web.bind.annotation.*;
 
 import com.Native.coder.Modelo.Login;
 import com.Native.coder.Modelo.RegisterRequest;
+import com.Native.coder.Modelo.RespostaUsuario;
 import com.Native.coder.Modelo.Email;
 import com.Native.coder.Modelo.Telefone;
 import com.Native.coder.Modelo.World;
+import com.Native.coder.Repository.RepostaUserRepository;
 import com.Native.coder.Repository.WorldRepository;
 import com.Native.coder.Servico.LoginServer;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -32,6 +37,10 @@ public class LoginController {
     
     private WorldRepository mundorepository;
 
+    @Autowired 
+    private  RepostaUserRepository   respostaUsuario  ;
+
+;
     @PostMapping
     public ResponseEntity<String> login(@RequestBody Login loginRequest) {
         try {
@@ -95,18 +104,36 @@ public class LoginController {
             return new ResponseEntity<>("Erro ao criar o cadastro: " + e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
-    
-
-    @PostMapping("/usuario/{userId}/mundo")
-    public ResponseEntity<World> getMundo(@PathVariable Long userId) {
+ 
+    @PostMapping("/repostauser")
+    public ResponseEntity<String> repostausuario(@RequestBody List<RegisterRequest> requests) {
         try {
-            World mundo = loginServer.obtermundo(userId);
-            return ResponseEntity.ok(mundo);
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            for (RegisterRequest request : requests) {
+                RespostaUsuario reposta = new RespostaUsuario();
+                reposta.setRes_user(request.getRes_user());
+                reposta.setRepostaAlgoritimo(request.getRepostaAlgoritimo());
+                reposta.setNomeUser(request.getNomeUser());
+                
+
+                loginServer.repostasuser(reposta, null, null);
+                
+                boolean correta = loginServer.repostasuser(reposta.getIdperguntas(), reposta.getRepostaAlgoritimo(), reposta.getRes_user());
+            }
+            return new ResponseEntity<>("Respostas enviadas com sucesso", HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>("Erro ao criar o cadastro: " + e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
-}
+
+
+    
+    }
+
+
+
+
+
 
 
 

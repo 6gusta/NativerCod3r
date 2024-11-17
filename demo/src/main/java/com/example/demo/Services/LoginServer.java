@@ -2,11 +2,14 @@ package com.Native.coder.Servico;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.Optional;
+
 import javax.security.auth.login.AccountNotFoundException;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.Native.coder.Modelo.Login;
+import com.Native.coder.Modelo.RespostaUsuario;
 import com.Native.coder.Modelo.Email;
 import com.Native.coder.Modelo.Endereco;
 import com.Native.coder.Modelo.Telefone;
@@ -14,12 +17,15 @@ import com.Native.coder.Modelo.World;
 import com.Native.coder.Repository.userRepository;
 import com.Native.coder.Repository.EmailRepository;
 import com.Native.coder.Repository.EnderecoRepository;
+import com.Native.coder.Repository.RepostaUserRepository;
 import com.Native.coder.Repository.TelefoneRepository;
 import com.Native.coder.Repository.WorldRepository;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import jakarta.transaction.Transactional;
+
 import javax.crypto.SecretKey;
 
 @Service
@@ -36,9 +42,14 @@ public class LoginServer {
 	  
 	  @Autowired
 	  private WorldRepository worldrepository;
+	  
+	  @Autowired
+	  private RepostaUserRepository respostaUserRepository;
+	  
     private final userRepository loginRepository;
     private static final SecretKey SECRET_KEY = Keys.secretKeyFor(SignatureAlgorithm.HS512); // Chave segura
     private static final long EXPIRATION_TIME = 86400000;
+  
 
     @Autowired
     public LoginServer(userRepository loginRepository) {
@@ -115,9 +126,9 @@ public class LoginServer {
         }
     }
 
-    public void registrarLogin(String users) throws AccountNotFoundException {
-        System.out.println("Tentando registrar login para o usuário: " + users);
-        Login login = loginRepository.findByUsers(users); 
+    public void registrarLogin(String user) throws AccountNotFoundException {
+        System.out.println("Tentando registrar login para o usuário: " + user);
+        Login login = loginRepository.findByUsers(user); 
         
         if (login != null) {
             System.out.println("Usuário encontrado: " + login.getUsers());
@@ -138,7 +149,7 @@ public class LoginServer {
 
             System.out.println("Após salvar: " + login);
         } else {
-            System.out.println("Usuário não encontrado: " + users);
+            System.out.println("Usuário não encontrado: " + user);
             throw new AccountNotFoundException("Usuário não encontrado");
         }
     }
@@ -159,12 +170,65 @@ public class LoginServer {
         }
     }
     
-   public World obtermundo(Long id) {
-	   
+    
+  public void regitrarMundo( World mundo ) {
+	 if(mundo.getNome() == null || mundo.getNome().isEmpty()) {
+		 throw new IllegalArgumentException(" nome do mundo nao pode ser vazio ");
+	 }
+	 
+	 worldrepository.save(mundo);
+	 
+ }
 
-	   Login login = loginRepository.findById(id).orElseThrow(() -> new RuntimeException(" usuario nao encotrado"));
-	   return login.getMundoAtual();
-   }
 
+    
+    public World obterMundoAtual(Long usuarioId) {
+        return worldrepository.obterMundoAtual(usuarioId);
+    }
+
+
+@Transactional
+public void associarMundo(Long id, Long mundoid) {
+    Login usuario = loginRepository.findById(id).orElse(null);
+    World mundo = worldrepository.findById(mundoid).orElse(null);
+    if (usuario != null && mundo != null) {
+        usuario.setMundoAtual(mundo);
+        loginRepository.save(usuario);
+    } else {
+        throw new IllegalArgumentException("Usuário ou mundo não encontrado!");
+    }
 }
+
+
+
+    public RespostaUsuario repostasuser(RespostaUsuario reposta , Long idpergunta, String  RepostaCorreta, String  res_user , Boolean VouF) {
+    	
+    	
+    	Optional<RespostaUsuario> pergunta =  respostaUserRepository.findById(idpergunta);
+    
+    	
+    	if (RepostaCorreta.equalsIgnoreCase(res_user)) {
+    		
+    		
+    	
+    	reposta.setVouF(true);
+    		
+    		
+    		
+    	}else {
+    		reposta.setVouF(false);
+    	}
+    	
+   
+        respostaUserRepository.save(reposta); 
+        return reposta; 
+    }
+}
+
+
+
+
+
+
+
 
