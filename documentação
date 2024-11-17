@@ -1,0 +1,26 @@
+Introdução
+Neste trabalho, aplicarei os conhecimentos adquiridos ao longo do curso de Padrões de Projeto e Arquitetura de Software. O projeto escolhido é uma iniciativa pessoal chamada NativerCod3r, que consiste em um sistema web e uma plataforma de ensino. O objetivo é ensinar Programação e Inglês para iniciantes, oferecendo uma interface elegante e dinâmica, além de conteúdo de fácil compreensão. As funcionalidades incluem tarefas interativas, registro de entradas e saídas nas correções das atividades, suporte e atualização constante do conteúdo da plataforma.
+
+Tecnologias e Linguagens
+Para o backend, utilizei Java com o framework Spring Boot. A escolha do Java se justifica por ser uma linguagem orientada a objetos, resultando em um código limpo e organizado, além de oferecer controle de tipagem. O Spring Boot facilita a criação de APIs e a conectividade com o banco de dados por meio de suas anotações. No frontend, empreguei HTML, CSS e JavaScript, que, juntos, possibilitam uma interface interativa e dinâmica. Para o banco de dados, optei pelo MySQL, conhecido por ser leve e de fácil utilização.
+
+Documentação
+Adotei o modelo de documentação C4, criado por Simon Brown em 2011. Esse modelo visa simplificar a representação visual das arquiteturas de software, oferecendo diferentes níveis de detalhe: contexto, contêineres, componentes e código. Essa abordagem é clara e acessível, beneficiando tanto desenvolvedores quanto stakeholders não técnicos. O C4 é composto por diagramas hierárquicos em camadas, permitindo descrever a arquitetura do software em diversos níveis de abstração. À medida que se aprofunda, o nível de detalhe aumenta, facilitando a compreensão. A escolha desse modelo se deve à sua facilidade de leitura e entendimento, tornando-o ideal para a comunicação da arquitetura de forma eficaz.
+
+Princípios
+Implementamos o princípio da orientação a objetos, o que resultou em um código modular, limpo e organizado. Essa modularização facilita testes, resolução de bugs e manutenção do código. Adotamos também alguns dos princípios S.O.L.I.D, como o Princípio da Responsabilidade Única, que assegura que cada trecho do código seja responsável por uma única função, o Princípio Aberto/Fechado e o Princípio de Substituição de Liskov.
+
+Padrões de Projeto
+Utilizamos o padrão MVC (Model-View-Controller), que organiza o sistema de maneira lógica, facilitando a manutenção e os testes. O Model representa a camada de dados e a lógica de negócios do sistema, sendo responsável por armazenar e gerenciar dados, além de lidar com interações com o banco de dados ou outras fontes externas.
+
+Controller
+O Controller funciona como a camada intermediária que conecta a View e o Model. Ele recebe as entradas do usuário vindas da View, processa esses eventos, interage com o Model para modificar ou consultar dados e, finalmente, atualiza a View.
+
+View
+A View é responsável pela interface do usuário (UI), exibindo as informações contidas no Model e enviando as interações do usuário para o Controller. Essa camada deve se restringir à lógica de apresentação e visualização, sem incluir lógica de negócios.
+
+Arquitetura
+Iniciamos com uma arquitetura monolítica, pois é mais simples de desenvolver e facilita a compreensão do fluxo de dados e da lógica de negócios. Esse modelo também simplifica o trabalho em equipe, pois a implantação é mais direta, com menor complexidade na configuração de ambientes. Contudo, a arquitetura monolítica pode apresentar desafios em termos de escalabilidade, já que não permite a independência de componentes. Futuramente, planejamos implementar uma arquitetura de microserviços, especialmente para integrar dados financeiros com o Power BI. Essa abordagem permitirá escalabilidade independente e otimização de recursos para partes do sistema que demandam maior capacidade. No entanto, gerenciar múltiplos microserviços pode ser complexo, exigindo ferramentas e práticas adequadas de gerenciamento, orquestração e monitoramento, o que demandará um aprofundamento nos conhecimentos necessários.
+
+Referências
+TABLELESS. Entendendo o padrão MVC na prática. Disponível em: https://tableless.com.
