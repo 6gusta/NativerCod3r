@@ -18,11 +18,11 @@ header {
     height: 260px;
     background-image: url(imagens/a6ead899-bcdc-4f72-8bbf-e4f40c1601de.jpg);
   
-    background-size: 20%;
+    background-size: 15%;
   
   
     background-repeat: no-repeat;
-    background-position: 1670px -70px;
+    background-position: 2000px -90px;
 }
 
 header h1 {
@@ -338,19 +338,6 @@ li:hover{
     }
 }
 
-/* Ajustes para telas grandes (monitores acima de 1200px) */
-@media (min-width: 1200px) {
-    .nuvem {
-        width: 330px;
-        height: 390px;
-        margin-top: 800px;
-        margin-left: 500px;
-    }
 
-    #robo {
-        margin-left: 1400px;
-        margin-top: -440px;
-    }
-}
 
 

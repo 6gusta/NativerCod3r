@@ -14,9 +14,11 @@ import com.Native.coder.Modelo.Email;
 import com.Native.coder.Modelo.Endereco;
 import com.Native.coder.Modelo.Telefone;
 import com.Native.coder.Modelo.World;
+import com.Native.coder.Modelo.Perguntas;
 import com.Native.coder.Repository.userRepository;
 import com.Native.coder.Repository.EmailRepository;
 import com.Native.coder.Repository.EnderecoRepository;
+import com.Native.coder.Repository.PerguntaRepository;
 import com.Native.coder.Repository.RepostaUserRepository;
 import com.Native.coder.Repository.TelefoneRepository;
 import com.Native.coder.Repository.WorldRepository;
@@ -45,6 +47,10 @@ public class LoginServer {
 	  
 	  @Autowired
 	  private RepostaUserRepository respostaUserRepository;
+	  
+	  @Autowired
+	  private PerguntaRepository pergunta;
+	  
 	  
     private final userRepository loginRepository;
     private static final SecretKey SECRET_KEY = Keys.secretKeyFor(SignatureAlgorithm.HS512); // Chave segura
@@ -201,28 +207,34 @@ public void associarMundo(Long id, Long mundoid) {
 
 
 
-    public RespostaUsuario repostasuser(RespostaUsuario reposta , Long idpergunta, String  RepostaCorreta, String  res_user , Boolean VouF) {
-    	
-    	
-    	Optional<RespostaUsuario> pergunta =  respostaUserRepository.findById(idpergunta);
-    
-    	
-    	if (RepostaCorreta.equalsIgnoreCase(res_user)) {
-    		
-    		
-    	
-    	reposta.setVouF(true);
-    		
-    		
-    		
-    	}else {
-    		reposta.setVouF(false);
-    	}
-    	
-   
-        respostaUserRepository.save(reposta); 
-        return reposta; 
+public RespostaUsuario processarResposta(RespostaUsuario resposta, Long idpergunta, String res_user, String respostaAlgoritimoUser, String respostaAlgoritimo) {
+
+    Optional<Perguntas> perguntaOpt = pergunta.findById(idpergunta); // Busca a pergunta pelo ID
+
+    if (perguntaOpt.isPresent()) {
+        Perguntas pergunta = perguntaOpt.get();
+
+        System.out.println("O algoritmo correto é: " + pergunta.getRespostaAlgoritmo()); // Verifica o valor diretamente da entidade
+
+        // Verifica as respostas
+        if (pergunta.getRespostaCorretaIngles().equalsIgnoreCase(res_user.trim()) && 
+            pergunta.getRespostaAlgoritmo().equalsIgnoreCase(respostaAlgoritimoUser.trim())) {
+            
+            resposta.setVouF("V");
+        } else {
+            resposta.setVouF("F");
+        }
+
+        resposta.setIdpergunta(pergunta);
+
+        respostaUserRepository.save(resposta);
+
+        return resposta;
+    } else {
+        throw new IllegalArgumentException("Pergunta não encontrada para o ID fornecido");
     }
+}
+
 }
 
 

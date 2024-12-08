@@ -17,6 +17,8 @@ import com.Native.coder.Modelo.RespostaUsuario;
 import com.Native.coder.Modelo.Email;
 import com.Native.coder.Modelo.Telefone;
 import com.Native.coder.Modelo.World;
+import com.Native.coder.Modelo.Perguntas;
+import com.Native.coder.Repository.PerguntaRepository;
 import com.Native.coder.Repository.RepostaUserRepository;
 import com.Native.coder.Repository.WorldRepository;
 import com.Native.coder.Servico.LoginServer;
@@ -27,7 +29,7 @@ import io.jsonwebtoken.InvalidClaimException;
 
 @RestController
 @RequestMapping("/api/login")
-@CrossOrigin(origins = "http://127.0.0.1:5500")
+@CrossOrigin(origins = "*")
 public class LoginController {
     
     @Autowired
@@ -37,10 +39,18 @@ public class LoginController {
     
     private WorldRepository mundorepository;
 
-    @Autowired 
-    private  RepostaUserRepository   respostaUsuario  ;
+    private   final  RepostaUserRepository   respostaUsuario  ;
+    
+    @Autowired
+    
+    private PerguntaRepository perguntas;
 
-;
+
+    LoginController(RepostaUserRepository respostaUsuario) {
+        this.respostaUsuario = respostaUsuario;
+    }
+
+
     @PostMapping
     public ResponseEntity<String> login(@RequestBody Login loginRequest) {
         try {
@@ -104,38 +114,49 @@ public class LoginController {
             return new ResponseEntity<>("Erro ao criar o cadastro: " + e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
- 
-    @PostMapping("/repostauser")
-    public ResponseEntity<String> repostausuario(@RequestBody List<RegisterRequest> requests) {
+    @PostMapping("/respostauser")
+    public ResponseEntity<String> processarRespostasUsuarios(@RequestBody List<RespostaUsuario> respostasUsuarioList) {
         try {
-            for (RegisterRequest request : requests) {
-                RespostaUsuario reposta = new RespostaUsuario();
-                reposta.setRes_user(request.getRes_user());
-                reposta.setRepostaAlgoritimo(request.getRepostaAlgoritimo());
-                reposta.setNomeUser(request.getNomeUser());
-                
-
-                loginServer.repostasuser(reposta, null, null);
-                
-                boolean correta = loginServer.repostasuser(reposta.getIdperguntas(), reposta.getRepostaAlgoritimo(), reposta.getRes_user());
+          
+            if (respostasUsuarioList == null || respostasUsuarioList.isEmpty()) {
+                return new ResponseEntity<>("A lista de respostas está vazia ou nula", HttpStatus.BAD_REQUEST);
             }
-            return new ResponseEntity<>("Respostas enviadas com sucesso", HttpStatus.OK);
+
+            boolean respostasCorretas = true; 
+            for (RespostaUsuario resposta : respostasUsuarioList) {
+                Long idPergunta = resposta.getIdpergunta().getIdpergunta();
+
+                Perguntas perguntaBanco = perguntas.findById(idPergunta).orElse(null);
+                if (perguntaBanco == null) {
+                    return new ResponseEntity<>("Pergunta não encontrada para o ID fornecido", HttpStatus.BAD_REQUEST);
+                }
+
+         
+                boolean correta = resposta.getRepostaAlgoritimoUser().equalsIgnoreCase(perguntaBanco.getRespostaAlgoritmo());
+                String resultado = correta ? "V" : "F";
+                resposta.setVouF(resultado);
+                respostaUsuario.save(resposta);
+
+        "
+                if (!correta) {
+                    respostasCorretas = false;
+                }
+            }
+
+      
+            if (respostasCorretas) {
+                return new ResponseEntity<>("questão correta!", HttpStatus.OK); 
+            } else {
+                return new ResponseEntity<>("Resposta incorreta!", HttpStatus.OK);
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
-            return new ResponseEntity<>("Erro ao criar o cadastro: " + e.getMessage(), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Erro ao processar as respostas: " + e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
 
 
-    
-    }
 
 
-
-
-
-
-
-
-   
-
+}

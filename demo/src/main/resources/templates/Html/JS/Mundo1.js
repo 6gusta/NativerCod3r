@@ -42,36 +42,42 @@ function toggleMenu() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Script de reposta  carregado');
+    console.log('Script de resposta carregado');
 
-
-    const button = document.querySelector('#butttonmundo'); 
+    // Selecionando os elementos HTML
+    const button = document.querySelector('#butttonmundo');
     const printcode = document.getElementById('print-code');
     const printtranslation = document.getElementById('print-translation');
     const printcode2 = document.getElementById('print-code2');
     const printtranslation2 = document.getElementById('print-translation2');
+    
+    // Definindo os IDs das perguntas
+    const idperguntas1 = 1;
+    const idperguntas2 = 2;
 
-   
-
+    // Verificando se o botão de envio existe
     if (button) {
         button.addEventListener('click', checkPrintChallenge);
     } else {
         console.error('Botão de mundo não encontrado!');
     }
 
+    // Função para verificar se todos os campos estão preenchidos
     function verificarCampos() {
         console.log("Verificando se os campos estão preenchidos...");
 
-        if (!printcode || !printtranslation || !printtranslation2 || !printcode2 ||!printcode.value.trim() || !printtranslation.value.trim()  ||!printcode2.value.trim() || !printtranslation2.value.trim()) {
-            alert("Por favor, preencha todos os campos de reposta antes de enviar .");
-         
+        // Verificando se todos os campos de resposta estão preenchidos
+        if (!printcode || !printtranslation || !printtranslation2 || !printcode2 || 
+            !printcode.value.trim() || !printtranslation.value.trim() || 
+            !printcode2.value.trim() || !printtranslation2.value.trim()) {
+            alert("Por favor, preencha todos os campos de resposta antes de enviar.");
             return false;
         }
         console.log("Campos preenchidos corretamente.");
         return true;
     }
 
-
+    // Função chamada quando o botão de envio é clicado
     function checkPrintChallenge() {
         console.log("Botão foi clicado! Verificando resposta...");
 
@@ -83,41 +89,62 @@ document.addEventListener('DOMContentLoaded', function() {
             return; // Para a execução se os campos não estiverem preenchidos
         }
 
+        // Pegando o nome do usuário do localStorage
         const usuarioNome = localStorage.getItem("usuarioNome");
 
+        // Estruturando os dados a serem enviados
+       
         const registerData = [
-            {   nomeUser: usuarioNome,
+            {   
+                idpergunta: { idpergunta: idperguntas1 },  // Estrutura aninhada para o backend
+                nomeUser: usuarioNome,
                 res_user: printtranslation.value,
-                repostaAlgoritimo: printcode.value,
+                repostaAlgoritimoUser: printcode.value,
+                VouF: "V"  // Ou outra lógica que defina o valor
             },
-            {   nomeUser: usuarioNome,
+            {   
+                idpergunta: { idpergunta: idperguntas2 }, 
+                nomeUser: usuarioNome,
                 res_user: printtranslation2.value,
-                repostaAlgoritimo: printcode2.value,
+                repostaAlgoritimoUser: printcode2.value,
+                VouF: "F"
             }
         ];
         
 
+        console.log("Dados a serem enviados:", registerData);
 
-        fetch('http://localhost:8080/api/login/repostauser', {
+
+        fetch('http://localhost:8080/api/login/respostauser', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(registerData)
+            body: JSON.stringify(registerData),  // Envia os dados como JSON
+            mode: 'cors'
         })
         .then(response => response.text())
         .then(message => {
-            console.log("Mensagem recebida do backend:", message);
-            alert(message);
-
-            // Verificando a resposta e mostrando um alerta se for correta
-            if (message.trim() === 'questão correta!') {
+            console.log("Mensagem recebida do backend:", message);  // Verifique a resposta exata
+             
+            // Remover espaços extras
+            const cleanedMessage = message.trim();
+            console.log("Mensagem sem espaços:", cleanedMessage);  // Verifique a string sem espaços extras
+        
+            // Comparação do valor esperado e a resposta
+            const respostaEsperada = 'questão correta!'.toLowerCase().trim();
+            console.log("Valor esperado:", respostaEsperada);  // Log para ver o valor esperado
+        
+            // Comparação insensível a maiúsculas/minúsculas e espaços extras
+            if (cleanedMessage === respostaEsperada) {
                 alert("Você acertou!");
             } else {
+                alert("Resposta incorreta!");
                 console.error('Resposta incorreta!');
             }
         })
         .catch(error => {
+            console.error('Erro ao processar a resposta:', error);
             alert('Erro ao processar a resposta: ' + error.message);
         });
     }
