@@ -1,14 +1,179 @@
-
-@media (max-width: 2010px) {
-    header {
-        background-position: 2200px -50px;
+@media (max-width: 180px) {
+    header h1 {
+        font-size: 2em;
     }
+
+    header p {
+        font-size: 1em;
+    }
+
+    #login, #saibamais {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .prev, .next {
+        font-size: 14px;
+        padding: 3px;
+    }
+
+    .menu-toggle .bar {
+        width: 35px;
+        height: 5px;
+    }
+
+    .nuvem {
+        position: absolute;
+        top: 20px;
+        left: 15%;
+        transform: translateX(-50%);
+        width: 330px;
+        height: 390px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 50px;
+        text-align: center;
+       
+        z-index: 10;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+        margin-top: 800px;
+        margin-left: 200px;
+    
+        
+    }
+
+    #robo{
+        background-image: url(Imagens/WhatsApp\ Image\ 2024-08-12\ at\ 07.34.54.jpeg);
+        border: 1px solid black;
+        height: 200px;
+        width: 200px;
+        margin-left: 1400px;
+        margin-top: -40px;
+        background-size: cover;
+       
+    }
+
+    
+
+.nuvem::before {
+    content: '';
+    position: absolute;
+    bottom: -15px; /* Ajusta a posição da "cauda" da nuvem */
+    left: 60%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid rgba(255, 255, 255, 0.8);
 }
 
-/* Ajustes para telas acima de 2000px */
-@media (min-width: 2000px) {
-    header {
-        background-size: 15%;
-        background-position: 1700px -50px;
-    }
+header {
+    text-align: center;
+    padding: 80px 20px;
+    background: #007BFF; /* Cor do cabeçalho */
+    color: white;
+    height: 260px;
+    background-image: url(imagens/a6ead899-bcdc-4f72-8bbf-e4f40c1601de.jpg);
+  
+    background-size: 25%;
+  
+  
+    background-repeat: no-repeat;
+    background-position: 500px -20px;
 }
+
+#saibamais{
+    background-color: transparent;
+    margin-left: 20px;
+  height: 40px;
+  width: 120px;
+  color:  transparent;
+  font-size: 20px;
+  margin-top:-5000px;
+ 
+
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background:  #007BFF; /* Cor do rodapé */
+    color: white;
+    font-size: 1.2em;
+    margin-top: -20px; /* Aumentando a fonte do rodapé */
+}
+.menu-container {
+    
+    flex-direction: column;
+    margin-top: -140px;
+    width: 200px;
+
+  
+   
+}
+
+.menu-toggle {
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.bar {
+    height: 7px;
+    width: 50px;
+    background: black;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+
+}
+
+.nav {
+    display: none; /* Escondido por padrão */
+    background-color: #fff;
+    
+    top: 50px;
+    right: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 0px;
+    font-size: 20px;
+    margin-top: 20px;
+    
+  
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+ 
+
+}
+
+.nav li {
+    padding: 15px;
+  
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+
+}
+
+.nav.show {
+    display: block; /* Mostra o menu quando ativo */
+}
+/* Estilo geral */
+* {
+    box-sizing: border-box;
+}
+}
+
+
+
+

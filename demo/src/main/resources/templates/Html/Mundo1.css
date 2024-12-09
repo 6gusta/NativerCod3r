@@ -90,10 +90,10 @@ header {
 }
 #painel{
     border: 1px solid rgba(0, 0, 0, 0.226);
-    height: 1000px;
+    height: 1050px;
     margin-left: 555px;
     margin-top: -1330px;
-    position: fixed;
+
     width: 2000px;
     
     background-color: white;
@@ -120,7 +120,7 @@ h2{
 .nuvem {
     position: absolute;
     top: 20px;
-    left: 85%;
+    left: 80%;
     transform: translateX(-50%);
     width: 200px;
     height: 90px;
@@ -132,7 +132,7 @@ h2{
     z-index: 10;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-    margin-top: 150px;
+    margin-top: 500px;
 
     
 }
@@ -366,103 +366,35 @@ ul {
 .nav.show {
     display: block; /* Mostra o menu quando ativo */
 }
-@media (max-width: 768px) {
-    .Aulas {
-        font-size: 20px; /* Reduz tamanho da fonte */
-    }
-
-    header {
-        padding: 20px 10px; /* Reduz padding */
-    }
-
-    h2 {
-        font-size: 1.5em; /* Tamanho ajustado */
-    }
-
-    #painel, #robo, #login, #saibamais, #sair, #buttton {
-        width: 90%; /* Largura total em telas menores */
-        max-width: none; /* Remove limite de largura máxima */
-    }
-}
-
-@media (max-width: 480px) {
-    h2 {
-        font-size: 1.2em; /* Tamanho ainda menor */
-    }
-
-    .nuvem {
-        width: 90%; /* Largura total em telas menores */
-        padding: 10px; /* Ajuste no padding */
-    }
-}
-
 
 footer  {
  
     background-color:#007BFF ;
-    height: 100px;
-    margin-top: 600px;
+    height: 130px;
+    margin-top: 650px;
     font-size: 25px;
-    width: 3000px;
+    width: 2830px;
     margin-left: -600px;
     color: white;
+    font-size: 25px;
     }
 
 
-    @media (max-width: 768px) {
-        .Aulas {
-            width: 30%; /* Largura total em telas menores */
-            height: auto; /* Altura automática */
-            font-size: 20px; /* Reduz tamanho da fonte */
-            margin-top: 20px; /* Ajusta a margem superior */
-        }
-    
-        li {
-            width: 100%; /* Largura total */
-            margin-left: 0; /* Remove margem esquerda */
-        }
-    
-        header {
-            padding: 20px 10px; /* Reduz padding */
-        }
-    
-         #robo, #login, #saibamais, #sair, #buttton {
-            width: 40%; /* Largura total em telas menores */
-            max-width: none; /* Remove limite de largura máxima */
-            margin: 0 auto;
-             /* Centraliza */
-        }
-        #painel{
-            margin-left: 290px;
-            width: 40%;
+ 
 
-        }
+.navButton {
+
+    background-color: #007BFF;
+    color: white;
+    margin-left: 40px;
+    width: 150px;
+    margin-top: 30px;
+    height: 60px;
+    font-size: 25px;
+    border-radius: 10px;
     
-        #robo {
-            margin-left: auto; /* Remove margem esquerda */
-            margin-right: auto; /* Centraliza à direita */
-        }
-    }
-    
-    @media (max-width: 480px) {
-        h2 {
-            font-size: 1.5em; /* Reduz tamanho do título */
-        }
-    
-        .Aulas {
-            font-size: 18px; /* Menor ainda em telas muito pequenas */
-        }
-    
-        #painel {
-            height: auto; /* Altura automática */
-        }
-    
-        .nuvem {
-            width: 150px; /* Menor largura */
-            padding: 15px; /* Ajusta padding */
-        }
-    
-        .prev, .next {
-            font-size: 16px; /* Reduz tamanho da fonte */
-        }
-    }
+
+   
+}
+
+

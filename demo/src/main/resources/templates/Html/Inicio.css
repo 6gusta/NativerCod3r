@@ -97,11 +97,11 @@ header {
     height: 140px;
     background-image: url(imagens/a6ead899-bcdc-4f72-8bbf-e4f40c1601de.jpg);
   
-    background-size: 20%;
+    background-size: 15%;
   
   
     background-repeat: no-repeat;
-    background-position: 1500px -70px;
+    background-position: 2200px -70px;
 }
 #saibamais{
     background-color: green;
@@ -309,34 +309,9 @@ footer {
     padding: 20px 0;
     background:  #007BFF; /* Cor do rodapé */
     color: white;
-    font-size: 1.2em; /* Aumentando a fonte do rodapé */
-    margin-top: 700px;
+    font-size: 30px; /* Aumentando a fonte do rodapé */
+    margin-top: 900px;
+    height: 60px;
 }
 
 
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .world-card {
-        width: 300px;
-        height: 300px;
-    }
-
-    header h1 {
-        font-size: 2.5em;
-    }
-
-    #sair, #saibamais {
-        width: 100%;
-    }
-
-    .lock-icon {
-        margin-left: 0;
-    }
-    #saibamais{
-        width: 100px;
-    }
-    .mundi{
-        max-height: 50px;
-    }
-}

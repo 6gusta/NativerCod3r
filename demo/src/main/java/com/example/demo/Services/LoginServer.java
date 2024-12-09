@@ -209,12 +209,12 @@ public void associarMundo(Long id, Long mundoid) {
 
 public RespostaUsuario processarResposta(RespostaUsuario resposta, Long idpergunta, String res_user, String respostaAlgoritimoUser, String respostaAlgoritimo) {
 
-    Optional<Perguntas> perguntaOpt = pergunta.findById(idpergunta); // Busca a pergunta pelo ID
+    Optional<Perguntas> perguntaOpt = pergunta.findById(idpergunta); 
 
     if (perguntaOpt.isPresent()) {
         Perguntas pergunta = perguntaOpt.get();
 
-        System.out.println("O algoritmo correto é: " + pergunta.getRespostaAlgoritmo()); // Verifica o valor diretamente da entidade
+        System.out.println("O algoritmo correto é: " + pergunta.getRespostaAlgoritmo()); 
 
         // Verifica as respostas
         if (pergunta.getRespostaCorretaIngles().equalsIgnoreCase(res_user.trim()) && 

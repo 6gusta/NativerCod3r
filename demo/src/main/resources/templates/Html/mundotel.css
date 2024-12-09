@@ -1,0 +1,39 @@
+@media (max-width: 768px) {
+    .Aulas {
+        font-size: 20px; /* Reduz tamanho da fonte */
+    }
+
+ 
+    header {
+        text-align: center;
+        padding: 80px 20px;
+        background: #007BFF; /* Cor do cabeçalho */
+        color: white;
+        height: 260px;
+        background-image: url(imagens/a6ead899-bcdc-4f72-8bbf-e4f40c1601de.jpg);
+      
+        background-size: 25%;
+      
+      
+        background-repeat: no-repeat;
+        background-position: 500px -20px;
+    }
+
+
+    h2 {
+        font-size: 1.5em; /* Tamanho ajustado */
+    }
+
+    #painel, #robo, #login, #saibamais, #sair, #buttton {
+        width: 90%; /* Largura total em telas menores */
+        max-width: none; /* Remove limite de largura máxima */
+    }
+}
+
+    h2 {
+        font-size: 1.2em; /* Tamanho ainda menor */
+    }
+
+    
+
+           
