@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Crie a instância de PIXI.Application
 const app = new PIXI.Application({
-    width: 2750,  // Largura do canvas
+    width: 1860,  // Largura do canvas
     height: 2500, // Altura do canvas
     backgroundColor: 0xFFF5F5F5// Cor de fundo do canvas
 });
@@ -218,5 +218,13 @@ function togglePasswordVisibility(inputId, iconId) {
         eyeIcon.classList.add('fa-eye-slash');
     }
 }
+
+
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+});
 
 

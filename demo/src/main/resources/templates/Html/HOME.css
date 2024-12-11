@@ -22,15 +22,25 @@
 
 header{
     background-color:whitesmoke ;
-    height: 120PX;
-    margin-top: 0PX;
+    height: 200PX;
+    margin-top: 30PX;
     width: 100%;
+    text-align: center;
   
 
         position: relative; /* Para que o z-index funcione */
         z-index: 3; /* Valor maior que o da caixa de login */
         background:  #007BFF; /* Cor do rodapé */
         color: white;
+
+
+        background-image: url(imagens/a6ead899-bcdc-4f72-8bbf-e4f40c1601de.jpg);
+  
+    background-size: 15%;
+  
+  
+    background-repeat: no-repeat;
+    background-position: 1500px -70px;
     
     
     
@@ -41,7 +51,7 @@ header{
 }
 
 h1 {
-    color: #2980b9;
+    color: white;
     font-size: 50px;
     text-align: center; /* Centraliza o título */
 }
@@ -144,9 +154,10 @@ footer  {position: relative; /* Para que o z-index funcione */
 z-index: 2; /* Valor maior que a caixa de login */
     background:  #007BFF; /* Cor do rodapé */
     color: white;
-height: 140px;
+height: 100px;
 margin-top: 230px;
 font-size: 25px;
+padding-top: 40px;
 
 }
 *{
@@ -164,7 +175,7 @@ ul {
 .menu-container {
     
     flex-direction: column;
-    margin-top: -165px;
+    margin-top: -115px;
     width: 200px;
 
   
@@ -232,12 +243,12 @@ ul {
 }
 #saibamais{
     background-color: green;
-    margin-left: 50px;
+  
   height: 40px;
   width: 200px;
   color: white;
   font-size: 20px;
-  margin-top:-80px;
+  margin-top:15px;
  
 
 }
@@ -259,4 +270,20 @@ ul {
         width: 80%;
         margin: 10px auto;
     }
+}
+header h1 {
+    font-size: 3.5em;
+    margin: 0;
+    margin-top: -30px;
+
+  
+  
+   
+  
+  
+}
+
+header p {
+    font-size: 1.8em; /* Aumentando a fonte do texto do cabeçalho */
+    margin: 20px 0;
 }

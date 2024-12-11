@@ -22,7 +22,7 @@ function togglePasswordVisibility() {
     }
 }
 const app = new PIXI.Application({
-    width: 2750,  // Largura do canvas
+    width: 1860,  // Largura do canvas
     height: 1500, // Altura do canvas
     backgroundColor: 0xFFF5F5F5// Cor de fundo do canvas
 });
@@ -250,12 +250,16 @@ function hideRegisterForm() {
     }
 }
 
-const menuToggle = document.getElementById('menuToggle');
-const navMenu = document.getElementById('navMenu');
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
 
-menuToggle.addEventListener('click', () =>{
-    navMenu.classList.toggle('show');
-
+    menuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('show');
+    });
 });
+
+
+
 
 

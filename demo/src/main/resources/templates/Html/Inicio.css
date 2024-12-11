@@ -94,14 +94,15 @@ header {
     padding: 80px 20px;
     background: #007BFF; /* Cor do cabeçalho */
     color: white;
-    height: 140px;
+    height: 120px;
     background-image: url(imagens/a6ead899-bcdc-4f72-8bbf-e4f40c1601de.jpg);
   
     background-size: 15%;
   
   
     background-repeat: no-repeat;
-    background-position: 2200px -70px;
+    background-position: 1500px 0px;
+    
 }
 #saibamais{
     background-color: green;
@@ -230,7 +231,7 @@ h7{
 .menu-container {
     
     flex-direction: column;
-    margin-top: -50px;
+    margin-top: -200px;
     width: 250px;
 
   
@@ -284,12 +285,10 @@ h7{
   
 }
 
-li:hover{
-    background-color: green;
-    color: white;
-}
+
 #sair:hover{
     background-color: green;
+    color: white;
 }
 
 

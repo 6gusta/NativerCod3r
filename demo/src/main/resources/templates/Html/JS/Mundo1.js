@@ -1,3 +1,14 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+    });
+});
+
+
+
 const messages = ["Bem Vindo !! ao seu primeiro mundo de python e ingles ", "no nosso primeiro mundo iremos resolver alguns desafios ultilzando python e a ligua inglesa", "assikm que tiver as reposta basta clica no botão enviar que voce vera o resultado ", "seu progresso so sera salvo caso tenha uma conta ", "qualquer duvida basta ir em FAQ", " BOA SORTE!!"];
 let messageIndex = 0;
 
@@ -19,26 +30,6 @@ document.querySelector('.next').addEventListener('click', function() {
     messageIndex = (messageIndex === messages.length - 1) ? 0 : messageIndex + 1;
     updateCarousel();
 });
-
-
-const menuToggle = document.getElementById('menuToggle');
-const navMenu = document.getElementById('navMenu');
-
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
-});
-
-
-function toggleMenu() {
-    const aulas = document.querySelector('.Aulas');
-    if (aulas.style.display === "none" || aulas.style.display === "") {
-        aulas.style.display = "block"; // Mostra o menu
-    } else {
-        aulas.style.display = "none"; // Esconde o menu
-    }
-}
-
-
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -148,4 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Erro ao processar a resposta: ' + error.message);
         });
     }
+
+    
 });
+

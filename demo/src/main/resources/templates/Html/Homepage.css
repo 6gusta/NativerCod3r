@@ -22,7 +22,7 @@ header {
   
   
     background-repeat: no-repeat;
-    background-position: 2000px -90px;
+    background-position: 1500px -20px;
 }
 
 header h1 {
@@ -52,7 +52,7 @@ main {
     padding: 20px;
 }
 
-#about, .features {
+#about, #features {
     background: white;
     padding: 30px;
     margin: 20px 0;
@@ -81,11 +81,12 @@ footer {
 #login{
     background-color: white;
     margin-left: 0px;
-  height: 40px;
-  width: 200px;
+  height: 50px;
+  width: 250px;
   color: black;
-  font-size: 20px;
+  font-size: 21px;
   cursor: pointer;
+  border-color: rgb(248, 244, 244);
  
 }
 #saibamais{
@@ -95,7 +96,7 @@ footer {
   width: 200px;
   color: white;
   font-size: 20px;
-  margin-top:110px;
+  margin-top:15px;
  
 
 }
@@ -105,15 +106,15 @@ footer {
     border: 1px solid black;
     height: 300px;
     width: 400px;
-    margin-left: 1400px;
+    margin-left: 1200px;
     margin-top: -440px;
     background-size: cover;
    
 }
 .nuvem {
     position: absolute;
-    top: 20px;
-    left: 52%;
+    top: -30px;
+    left: 55%;
     transform: translateX(-50%);
     width: 330px;
     height: 390px;
@@ -174,10 +175,7 @@ footer {
 .next {
     right: 10px;
 }
-li:hover{
-    background-color: green;
-    color: white;
-}
+
 #login:hover{
     background-color: green;
     color: white;
@@ -196,6 +194,7 @@ li:hover{
     flex-direction: column;
     margin-top: -165px;
     width: 200px;
+
 
   
    
@@ -229,6 +228,7 @@ li:hover{
     margin-left: 0px;
     font-size: 20px;
     margin-top: 20px;
+   
     
   
 }
@@ -237,12 +237,15 @@ li:hover{
     list-style: none;
     padding: 0;
     margin: 0;
+    
+    
  
 
 }
 
 .nav li {
     padding: 15px;
+ 
   
 }
 

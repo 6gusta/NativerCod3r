@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+}
+
 #registerButton {
     background-color: #1E3A8A;
     color: white;
@@ -62,22 +66,33 @@ label {
     box-sizing: border-box;
 }
 h1 {
-    color: #2980b9;
+    color: white;
     font-size: 50px;
     text-align: center; /* Centraliza o título */
 }
+
+
 header{
     background-color:whitesmoke ;
-    height: 120PX;
-    margin-top: -34PX;
+    height: 210PX;
+    margin-top: 20PX;
     width: 100%;
-
-    background-repeat: no-repeat;
+    text-align: center;
+  
 
         position: relative; /* Para que o z-index funcione */
         z-index: 3; /* Valor maior que o da caixa de login */
         background:  #007BFF; /* Cor do rodapé */
         color: white;
+
+
+        background-image: url(imagens/a6ead899-bcdc-4f72-8bbf-e4f40c1601de.jpg);
+  
+    background-size: 15%;
+  
+  
+    background-repeat: no-repeat;
+    background-position: 1500px -20px;
     
     
     
@@ -86,13 +101,16 @@ header{
     
     
 }
-footer  {position: relative; /* Para que o z-index funcione */
+footer  {
+    position: relative; /* Para que o z-index funcione */
     z-index: 2; /* Valor maior que a caixa de login */
         background:  #007BFF; /* Cor do rodapé */
         color: white;
     height: 90px;
     margin-top: 290px;
     font-size: 25px;
+    padding-top: 40px;
+    
     
     }
 
@@ -101,7 +119,21 @@ h2{
    padding-top: 40px;
    margin-left: 120px;
    font-size: 40px;
+   
 }
+
+#saibamais{
+    background-color: green;
+  
+  height: 40px;
+  width: 200px;
+  color: white;
+  font-size: 20px;
+  margin-top:05px;
+ 
+
+}
+
 #message {
     color: green;
     font-weight: bold;
@@ -120,7 +152,7 @@ h2{
 .menu-container {
     
     flex-direction: column;
-    margin-top: -165px;
+    margin-top: -110px;
     width: 200px;
 
   
@@ -227,3 +259,21 @@ h2{
     label {
         font-size: 18px;
     }
+}
+
+header h1 {
+    font-size: 3.5em;
+    margin: 0;
+    margin-top: -30px;
+
+  
+  
+   
+  
+  
+}
+
+header p {
+    font-size: 1.8em; /* Aumentando a fonte do texto do cabeçalho */
+    margin: 20px 0;
+}
