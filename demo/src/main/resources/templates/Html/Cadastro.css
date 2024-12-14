@@ -1,5 +1,6 @@
 *{
     margin: 0;
+
 }
 
 #registerButton {
@@ -31,7 +32,7 @@
     border-radius: 15px;
     text-align: center;
     margin-left: 50%;    
-   margin-top: -2400px;
+   margin-top: 100px;
    background-color: white;
    transform: translateX(-50%); /* Centraliza horizontalmente */
    background-image: url(imagens/a6ead899-bcdc-4f72-8bbf-e4f40c1601de.jpg);
